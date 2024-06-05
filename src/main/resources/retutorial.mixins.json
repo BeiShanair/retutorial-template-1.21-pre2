@@ -3,7 +3,7 @@
 	"package": "com.besson.retutotial.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ReTutorialMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

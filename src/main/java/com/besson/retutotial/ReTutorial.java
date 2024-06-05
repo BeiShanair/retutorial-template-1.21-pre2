@@ -1,5 +1,6 @@
 package com.besson.retutotial;
 
+import com.besson.retutotial.item.ModItemGroups;
 import com.besson.retutotial.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -19,6 +20,8 @@ public class ReTutorial implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		ModItems.registerModItems();
+		ModItemGroups.registerModItemGroups();
+
 		LOGGER.info("Hello Fabric world!");
 	}
 }

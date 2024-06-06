@@ -1,6 +1,7 @@
 package com.besson.retutotial.item;
 
 import com.besson.retutotial.ReTutorial;
+import com.besson.retutotial.block.ModBlocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -32,6 +33,7 @@ public class ModItemGroups {
             ItemGroup.create(null, -1).displayName(Text.translatable("itemGroup.retutorial_group"))
                     .icon(() -> new ItemStack(ModItems.ICE_ETHER)).entries((displayContext, entries) -> {
                 entries.add(ModItems.ICE_ETHER);
+                entries.add(ModBlocks.ICE_ETHER_ORE);
             }).build());
     public static void registerModItemGroups() {
         ReTutorial.LOGGER.info("Registering Item Groups");

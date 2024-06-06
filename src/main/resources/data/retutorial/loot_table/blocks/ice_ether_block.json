@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "retutorial:ice_ether"
+          "name": "retutorial:ice_ether_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "retutorial:blocks/ice_ether"
+  "random_sequence": "retutorial:blocks/ice_ether_block"
 }

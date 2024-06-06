@@ -11,7 +11,11 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
     public static final Block ICE_ETHER_ORE = registerBlocks("ice_ether_ore",
-            new Block(AbstractBlock.Settings.create().strength(3.0F, 3.0F)));
+            new Block(AbstractBlock.Settings.create().requiresTool().strength(3.0F, 3.0F)));
+    public static final Block ICE_ETHER_BLOCK = registerBlocks("ice_ether_block",
+            new Block(AbstractBlock.Settings.create().requiresTool().strength(4.5F, 6.0F)));
+    public static final Block RAW_ICE_ETHER_BLOCK = registerBlocks("raw_ice_ether_block",
+            new Block(AbstractBlock.Settings.create().requiresTool().strength(3.0F, 3.0F)));
     // 基于原版的方块物品注册方法
     public static void registerBlockItems(String name, Block block) {
         Item item = Registry.register(Registries.ITEM, Identifier.of(ReTutorial.MOD_ID, name), new BlockItem(block, new Item.Settings()));

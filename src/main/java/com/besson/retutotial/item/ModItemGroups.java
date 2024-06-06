@@ -33,7 +33,11 @@ public class ModItemGroups {
             ItemGroup.create(null, -1).displayName(Text.translatable("itemGroup.retutorial_group"))
                     .icon(() -> new ItemStack(ModItems.ICE_ETHER)).entries((displayContext, entries) -> {
                 entries.add(ModItems.ICE_ETHER);
+                entries.add(ModItems.RAW_ICE_ETHER);
+
                 entries.add(ModBlocks.ICE_ETHER_ORE);
+                entries.add(ModBlocks.ICE_ETHER_BLOCK);
+                entries.add(ModBlocks.RAW_ICE_ETHER_BLOCK);
             }).build());
     public static void registerModItemGroups() {
         ReTutorial.LOGGER.info("Registering Item Groups");

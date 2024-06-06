@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 public class ModItems {
     // 注册物品
     public static final Item ICE_ETHER = registerItems("ice_ether", new Item(new Item.Settings()));
+    public static final Item RAW_ICE_ETHER = registerItems("raw_ice_ether", new Item(new Item.Settings()));
     // 注册方法，由原版改编（一堆方法整合）
     private static Item registerItems(String name, Item item) {
         // 由原版整合的方法

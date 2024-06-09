@@ -1,7 +1,7 @@
 {
   "values": [
-    "retutorial:ice_ether_ore",
     "retutorial:ice_ether_block",
+    "retutorial:ice_ether_ore",
     "retutorial:raw_ice_ether_block"
   ]
 }

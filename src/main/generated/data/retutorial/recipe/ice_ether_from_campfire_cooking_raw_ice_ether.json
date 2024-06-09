@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "group": "ice_ether",
+  "ingredient": {
+    "item": "retutorial:raw_ice_ether"
+  },
+  "result": {
+    "id": "retutorial:ice_ether"
+  }
+}

@@ -1,12 +1,14 @@
-// 1.21 Pre-Release 2	2024-06-09T14:41:55.592183	ReTutorial/Model Definitions
-d21db6f09d89c958b1df841ec16227c1cb2d1700 assets\retutorial\blockstates\ice_ether_block.json
-48255f3d1f918445cb17ee0d67e1bdb782404b65 assets\retutorial\models\item\ice_ether_ore.json
+// 1.21 Pre-Release 2	2024-06-09T16:08:01.2062069	ReTutorial/Model Definitions
 ad02907d0247d2dc61f0fe8fe1ae9c90b78ab5a8 assets\retutorial\blockstates\raw_ice_ether_block.json
+48255f3d1f918445cb17ee0d67e1bdb782404b65 assets\retutorial\models\item\ice_ether_ore.json
 5bb68bf7821d43a8f6568c6671e39c1be46726fd assets\retutorial\models\block\ice_ether_block.json
-82ed29f90fa0974618424ec982e5fd9f4cd3dad3 assets\retutorial\models\block\raw_ice_ether_block.json
-1fbb481a38fb2208535cbd7bde97e06556eef164 assets\retutorial\models\item\raw_ice_ether_block.json
 c7b1f8c832dacf8d214a4a436ecef80a2a08bedd assets\retutorial\models\block\ice_ether_ore.json
-19934d520e5daa37ee158de8c1685c0ee1918e57 assets\retutorial\blockstates\ice_ether_ore.json
+1fbb481a38fb2208535cbd7bde97e06556eef164 assets\retutorial\models\item\raw_ice_ether_block.json
 ef015b1473700da0c7e99e91164c4a3a641ec862 assets\retutorial\models\item\ice_ether.json
 20aa42f4258ed634b32eeff5352640e39b66bfef assets\retutorial\models\item\raw_ice_ether.json
+6fd411eda0ab1bc173b1cd744b1ff70c0c0ff3fb assets\retutorial\models\item\cheese.json
+d21db6f09d89c958b1df841ec16227c1cb2d1700 assets\retutorial\blockstates\ice_ether_block.json
+49a82780bad2f4ad39868afb559f92b02c1c0765 assets\retutorial\models\item\strawberry.json
+82ed29f90fa0974618424ec982e5fd9f4cd3dad3 assets\retutorial\models\block\raw_ice_ether_block.json
+19934d520e5daa37ee158de8c1685c0ee1918e57 assets\retutorial\blockstates\ice_ether_ore.json
 7200aa588cbd4a947b9462315593e07d6590e662 assets\retutorial\models\item\ice_ether_block.json

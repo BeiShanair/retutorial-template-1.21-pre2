@@ -34,6 +34,8 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.ICE_ETHER)).entries((displayContext, entries) -> {
                 entries.add(ModItems.ICE_ETHER);
                 entries.add(ModItems.RAW_ICE_ETHER);
+                entries.add(ModItems.STRAWBERRY);
+                entries.add(ModItems.CHEESE);
 
                 entries.add(ModBlocks.ICE_ETHER_ORE);
                 entries.add(ModBlocks.ICE_ETHER_BLOCK);

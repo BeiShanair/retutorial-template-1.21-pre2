@@ -11,7 +11,6 @@ public class ReTutorialDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(ModBlockTagsProvider::new);
 		pack.addProvider(ModItemTagsProvider::new);
-		pack.addProvider(ModENLangProvider::new);
 		pack.addProvider(ModModelsProvider::new);
 		pack.addProvider(ModRecipesProvider::new);
 		pack.addProvider(ModLootTableProvider::new);

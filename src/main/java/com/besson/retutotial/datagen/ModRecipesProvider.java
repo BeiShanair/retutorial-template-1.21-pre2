@@ -43,9 +43,9 @@ public class ModRecipesProvider extends FabricRecipeProvider {
         offerCampfireCooking(exporter, ICE_ETHER_LIST, RecipeCategory.MISC, ModItems.ICE_ETHER,
                 0.35f, 600, "ice_ether");
 
-        // 营火配方的另外一种生成方法，更简单一点
-        RecipeProvider.offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new,
-                600, ModItems.RAW_ICE_ETHER, ModItems.ICE_ETHER, 0.35f);
+//        // 营火配方的另外一种生成方法，更简单一点
+//        RecipeProvider.offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new,
+//                600, ModItems.RAW_ICE_ETHER, ModItems.ICE_ETHER, 0.35f);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Items.SUGAR, 3)
                 .pattern("###")

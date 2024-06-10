@@ -24,6 +24,9 @@ public class ReTutorial implements ModInitializer {
 		ModItemGroups.registerModItemGroups();
 		ModBlocks.registerModBlocks();
 
+//		// 使用Fabric API注册燃料，当然你可以使用Mixin
+//		FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600);
+
 		LOGGER.info("Hello Fabric world!");
 	}
 }

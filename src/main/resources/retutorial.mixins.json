@@ -4,9 +4,15 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "AbstractFurnaceBlockEntityMixin",
+    "ItemsInvoker",
+    "EndermanEntityInvoker",
+    "GrassColorsAccessor",
     "ReTutorialMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  },
+  "client": [
+    "MinecraftClientAccessor"
+  ]
 }

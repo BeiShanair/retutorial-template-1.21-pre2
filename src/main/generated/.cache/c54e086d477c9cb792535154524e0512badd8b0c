@@ -1,5 +1,5 @@
-// 1.21 Pre-Release 2	2024-06-10T15:50:29.6620667	ReTutorial/Tags for minecraft:block
+// 1.21 Pre-Release 2	2024-06-13T22:02:37.0836088	ReTutorial/Tags for minecraft:block
 b1489b304f5005f179fe41757ec883803ca95f42 data\minecraft\tags\block\needs_diamond_tool.json
 396aca378c26b714b93c80865615e85f835c17ba data\minecraft\tags\block\needs_stone_tool.json
-922c0bcfea7e7627d93c9c88148a05f0f83c3696 data\minecraft\tags\block\needs_iron_tool.json
 26b7e296f0e674a8a6f06e29ae4a8afe3ded1ee9 data\minecraft\tags\block\mineable\pickaxe.json
+922c0bcfea7e7627d93c9c88148a05f0f83c3696 data\minecraft\tags\block\needs_iron_tool.json

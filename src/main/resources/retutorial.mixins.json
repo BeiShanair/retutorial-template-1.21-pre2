@@ -4,9 +4,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "AbstractFurnaceBlockEntityMixin",
-    "ItemsInvoker",
     "EndermanEntityInvoker",
     "GrassColorsAccessor",
+    "ItemsInvoker",
     "ReTutorialMixin"
   ],
   "injectors": {

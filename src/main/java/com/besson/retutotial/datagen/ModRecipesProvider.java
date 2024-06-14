@@ -3,6 +3,7 @@ package com.besson.retutotial.datagen;
 import com.besson.retutotial.ReTutorial;
 import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.item.ModItems;
+import com.besson.retutotial.tags.ModItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
@@ -47,9 +48,10 @@ public class ModRecipesProvider extends FabricRecipeProvider {
 //        RecipeProvider.offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new,
 //                600, ModItems.RAW_ICE_ETHER, ModItems.ICE_ETHER, 0.35f);
 
+        // 在配方中，我们也可以使用tag作为它的输入值
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Items.SUGAR, 3)
                 .pattern("###")
-                .input('#', Items.BEETROOT)
+                .input('#', ModItemTags.SUGAR_TAG)
                 .criterion("has_item", RecipeProvider.conditionsFromItem(Items.BEETROOT))
                 .offerTo(exporter, Identifier.of(ReTutorial.MOD_ID, "beetroot_to_sugar"));
 

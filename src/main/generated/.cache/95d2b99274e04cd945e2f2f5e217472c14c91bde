@@ -1,4 +1,4 @@
-// 1.21 Pre-Release 2	2024-06-13T22:02:37.0846099	ReTutorial/Block Loot Tables
+// 1.21	2024-06-14T18:01:38.7371532	ReTutorial/Block Loot Tables
 ce63a153fa3771af062578bb5b87345a2445e687 data\retutorial\loot_table\blocks\ice_ether_block.json
 d91e173839d901c1b7a43c9378a64b2cb4945e1d data\retutorial\loot_table\blocks\raw_ice_ether_block.json
 6824d3db01380a866a691acfad3722bc5a82ca3b data\retutorial\loot_table\blocks\ice_ether_ore.json

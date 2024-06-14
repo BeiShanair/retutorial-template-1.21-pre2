@@ -1,10 +1,10 @@
-// 1.21 Pre-Release 2	2024-06-13T22:02:37.0846099	ReTutorial/Recipes
+// 1.21	2024-06-14T18:01:38.7381538	ReTutorial/Recipes
 fc13416e224a4c4a771dadff39d4ecfd3fa6059a data\retutorial\recipe\ice_ether_from_smelting_raw_ice_ether.json
 f0656c68c3605e38659e7c6fda80c1171ddd4fd2 data\retutorial\recipe\ice_ether_ore.json
 bd55cb7236a3d417e3ccce86ed2178c525d2d8cb data\retutorial\recipe\ice_ether_block.json
 fda64646230df1fd7907796a1ab31eb4539f0245 data\retutorial\advancement\recipes\building_blocks\ice_ether_block.json
 f195e56594dab7dff1eba9a51a220362f8367558 data\retutorial\advancement\recipes\misc\ice_ether_from_campfire_cooking_raw_ice_ether.json
-5f38b7f58fd381893a8f95f704251d1813ec5123 data\retutorial\recipe\beetroot_to_sugar.json
+fbc6b25ceea881b98e0816ce2f31bfa17c0ff8a9 data\retutorial\recipe\beetroot_to_sugar.json
 5819809271e16722cc6ce31f2c54ebd1fb636d42 data\retutorial\advancement\recipes\misc\ice_ether_from_blasting_raw_ice_ether.json
 be8c560951204d3dd010ac144d87b34f3382648d data\retutorial\advancement\recipes\building_blocks\ice_ether_ore.json
 6e7bb5f2e41ce1a0db66b3dd83de04bb06f7010c data\retutorial\advancement\recipes\misc\ice_ether.json

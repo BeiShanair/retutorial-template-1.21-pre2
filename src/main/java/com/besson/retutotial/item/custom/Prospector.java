@@ -1,7 +1,7 @@
 package com.besson.retutotial.item.custom;
 
+import com.besson.retutotial.tags.ModBlockTags;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,8 +11,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import java.util.List;
 
 public class Prospector extends Item {
 
@@ -77,10 +75,20 @@ public class Prospector extends Item {
         return ActionResult.SUCCESS;
     }
 
-    // 我们自定义的方法，用于判断方块是否是矿石
+//    // 我们自定义的方法，用于判断方块是否是矿石
+//    private boolean isRightBlock(BlockState blockState) {
+//        // 这玩意讲了Tags之后就会简单很多
+//        if (blockState.isOf(Blocks.DIAMOND_ORE) || blockState.isOf(Blocks.IRON_ORE) || blockState.isOf(Blocks.COAL_ORE)){
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+
+    // 用Tag来改写方法
     private boolean isRightBlock(BlockState blockState) {
         // 这玩意讲了Tags之后就会简单很多
-        if (blockState.isOf(Blocks.DIAMOND_ORE) || blockState.isOf(Blocks.IRON_ORE) || blockState.isOf(Blocks.COAL_ORE)){
+        if (blockState.isIn(ModBlockTags.PROSPECTOR_ORE)){
             return true;
         } else {
             return false;

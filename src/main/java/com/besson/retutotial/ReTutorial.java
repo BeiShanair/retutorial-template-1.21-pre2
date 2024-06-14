@@ -3,19 +3,12 @@ package com.besson.retutotial;
 import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.item.ModItemGroups;
 import com.besson.retutotial.item.ModItems;
-import com.besson.retutotial.mixin.AbstractFurnaceBlockEntityMixin;
-import com.besson.retutotial.mixin.GrassColorsAccessor;
-import com.besson.retutotial.mixin.ItemsInvoker;
-import com.besson.retutotial.mixin.MinecraftClientAccessor;
-import com.google.common.collect.Maps;
+import com.besson.retutotial.tags.ModBlockTags;
+import com.besson.retutotial.tags.ModItemTags;
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.item.Item;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.LinkedHashMap;
 
 public class ReTutorial implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -32,6 +25,8 @@ public class ReTutorial implements ModInitializer {
 		ModItems.registerModItems();
 		ModItemGroups.registerModItemGroups();
 		ModBlocks.registerModBlocks();
+		ModBlockTags.registerModBlockTags();
+		ModItemTags.registerModItemTags();
 
 //		// 使用Fabric API注册燃料，当然你可以使用Mixin
 //		FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600);

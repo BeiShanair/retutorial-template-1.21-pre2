@@ -1,33 +1,41 @@
 package com.besson.retutotial.item.custom;
 
+import com.besson.retutotial.item.ModItems;
 import com.besson.retutotial.tags.ModBlockTags;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Prospector extends Item {
-
-    // super函数调用父类的构造函数，并设置最大耐久度为127
     public Prospector(Settings settings) {
         super(settings.maxDamage(127));
+
     }
 
-    // useOnBlock方法将在玩家右键点击方块时触发
+    // 重写右键点击方块的方法
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
-        // 获取世界、方块坐标、玩家
+
         World world = context.getWorld();
         BlockPos blockPos = context.getBlockPos();
         PlayerEntity player = context.getPlayer();
 
-        // 如果不是客户端
         if (!world.isClient()) {
             boolean foundBlock = false;
             // 如果按住shift键，就扩大搜索范围（往北和西各3个方块的范围）
@@ -93,5 +101,20 @@ public class Prospector extends Item {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
+    }
+
+    // 暂定附魔方法
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        DynamicRegistryManager registryManager = world.getRegistryManager();
+        RegistryEntry<Enchantment> enchantment =
+                registryManager.get(RegistryKeys.ENCHANTMENT).getEntry(Identifier.ofVanilla("sharpness")).get();
+        stack.addEnchantment(enchantment, 5);
+        super.inventoryTick(stack, world, entity, slot, selected);
     }
 }

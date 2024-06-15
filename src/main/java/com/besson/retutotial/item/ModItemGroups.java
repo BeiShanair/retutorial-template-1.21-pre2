@@ -2,14 +2,19 @@ package com.besson.retutotial.item;
 
 import com.besson.retutotial.ReTutorial;
 import com.besson.retutotial.block.ModBlocks;
+import com.besson.retutotial.item.custom.Prospector;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentLevelEntry;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.*;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.World;
 
 public class ModItemGroups {
 //    // 基于原版的方法
@@ -37,12 +42,20 @@ public class ModItemGroups {
                 entries.add(ModItems.STRAWBERRY);
                 entries.add(ModItems.CHEESE);
                 entries.add(ModItems.ANTHRACITE);
+
                 entries.add(ModItems.PROSPECTOR);
 
                 entries.add(ModBlocks.ICE_ETHER_ORE);
                 entries.add(ModBlocks.ICE_ETHER_BLOCK);
                 entries.add(ModBlocks.RAW_ICE_ETHER_BLOCK);
+
             }).build());
+
+    private static void addMaxLevelEnchantedBooks(ItemGroup.Entries entries, RegistryWrapper<Enchantment> registryWrapper, ItemGroup.StackVisibility stackVisibility) {
+        registryWrapper.streamEntries().map(enchantmentEntry -> EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry((RegistryEntry<Enchantment>)enchantmentEntry,
+                ((Enchantment)enchantmentEntry.value()).getMaxLevel()))).forEach(stack -> entries.add((ItemStack)stack, stackVisibility));
+    }
+
     public static void registerModItemGroups() {
         ReTutorial.LOGGER.info("Registering Item Groups");
     }

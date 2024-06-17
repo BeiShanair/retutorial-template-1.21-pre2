@@ -3,6 +3,7 @@ package com.besson.retutotial.item.custom;
 import com.besson.retutotial.item.ModItems;
 import com.besson.retutotial.tags.ModBlockTags;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.enchantment.Enchantment;
@@ -13,6 +14,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -22,9 +24,11 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import java.util.List;
+
 public class Prospector extends Item {
     public Prospector(Settings settings) {
-        super(settings.maxDamage(127));
+        super(settings);
 
     }
 
@@ -38,9 +42,9 @@ public class Prospector extends Item {
 
         if (!world.isClient()) {
             boolean foundBlock = false;
-            // 如果按住shift键，就扩大搜索范围（往北和西各3个方块的范围）
-            if (Screen.hasShiftDown()) {
-                for (int i = 0; i <= blockPos.getY() + 128; i++) {
+
+            if (!Screen.hasShiftDown()) {
+                for (int i = 0; i <= blockPos.getY() + 64; i++) {
                     for (int j = 0; j <= 5; j++) {
                         for (int k = 0; k <= 5; k++) {
                             BlockPos blockPos1 = blockPos.down(i).north(j).east(k);
@@ -62,7 +66,7 @@ public class Prospector extends Item {
                 }
             } else {
                 // 这里的方法和上面的方法类似，只是没有扩大搜索范围
-                for (int i = 0; i <= blockPos.getY() + 128; i++) {
+                for (int i = 0; i <= blockPos.getY() + 64; i++) {
                     BlockPos blockPos1 = blockPos.down(i);
                     BlockState blockState = context.getWorld().getBlockState(blockPos1);
                     String blockName = blockState.getBlock().getName().getString();
@@ -95,8 +99,7 @@ public class Prospector extends Item {
 
     // 用Tag来改写方法
     private boolean isRightBlock(BlockState blockState) {
-        // 这玩意讲了Tags之后就会简单很多
-        if (blockState.isIn(ModBlockTags.PROSPECTOR_ORE)){
+        if (blockState.isIn(ModBlockTags.PROSPECTOR_ORE)) {
             return true;
         } else {
             return false;
@@ -116,5 +119,15 @@ public class Prospector extends Item {
                 registryManager.get(RegistryKeys.ENCHANTMENT).getEntry(Identifier.ofVanilla("sharpness")).get();
         stack.addEnchantment(enchantment, 5);
         super.inventoryTick(stack, world, entity, slot, selected);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        if (Screen.hasShiftDown()){
+            tooltip.add(Text.translatable("item.retutorial.prospector.shift_tooltip"));
+        }else {
+            tooltip.add(Text.translatable("item.retutorial.prospector.tooltip"));
+        }
+        super.appendTooltip(stack, context, tooltip, type);
     }
 }

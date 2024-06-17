@@ -15,7 +15,7 @@ public class ModItems {
     public static final Item STRAWBERRY = registerItems("strawberry", new Item(new Item.Settings().food(ModFoodComponents.STRAWBERRY)));
     public static final Item CHEESE = registerItems("cheese", new Item(new Item.Settings().food(ModFoodComponents.CHEESE)));
     public static final Item ANTHRACITE = registerItems("anthracite", new Item(new Item.Settings()));
-    public static final Item PROSPECTOR = registerItems("prospector", new Prospector(new Item.Settings()));
+    public static final Item PROSPECTOR = registerItems("prospector", new Prospector(new Item.Settings().maxDamage(127)));
     // 注册方法，由原版改编（一堆方法整合）
     private static Item registerItems(String name, Item item) {
         // 由原版整合的方法

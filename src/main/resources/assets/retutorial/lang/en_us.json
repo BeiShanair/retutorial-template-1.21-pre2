@@ -10,5 +10,8 @@
   "block.retutorial.ice_ether_ore": "Ice Ether Ore",
   "block.retutorial.raw_ice_ether_block": "Raw Ice Ether Block",
 
-  "itemGroup.retutorial_group": "Retutorial Group"
+  "itemGroup.retutorial_group": "Retutorial Group",
+
+  "item.retutorial.prospector.tooltip": "Hold \u00A72SHIFT\u00A7r for more information",
+  "item.retutorial.prospector.shift_tooltip": "A tool used to prospect for ores."
 }

@@ -13,6 +13,9 @@
     "defaultRequire": 1
   },
   "client": [
-    "MinecraftClientAccessor"
+    "ItemRenderAccessor",
+    "ItemRenderMixin",
+    "MinecraftClientAccessor",
+    "ModelLoaderMixin"
   ]
 }

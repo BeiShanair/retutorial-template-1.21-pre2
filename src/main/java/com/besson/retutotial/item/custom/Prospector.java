@@ -1,13 +1,9 @@
 package com.besson.retutotial.item.custom;
 
-import com.besson.retutotial.item.ModItems;
 import com.besson.retutotial.tags.ModBlockTags;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -123,11 +119,11 @@ public class Prospector extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        super.appendTooltip(stack, context, tooltip, type);
         if (Screen.hasShiftDown()){
             tooltip.add(Text.translatable("item.retutorial.prospector.shift_tooltip"));
         }else {
             tooltip.add(Text.translatable("item.retutorial.prospector.tooltip"));
         }
-        super.appendTooltip(stack, context, tooltip, type);
     }
 }

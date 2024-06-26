@@ -1,12 +1,12 @@
 package com.besson.retutotial;
 
+import com.besson.retutotial.block.ModBlockFamilies;
 import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.item.ModItemGroups;
 import com.besson.retutotial.item.ModItems;
 import com.besson.retutotial.tags.ModBlockTags;
 import com.besson.retutotial.tags.ModItemTags;
 import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,6 +27,7 @@ public class ReTutorial implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModBlockTags.registerModBlockTags();
 		ModItemTags.registerModItemTags();
+		ModBlockFamilies.registerModBlockFamilies();
 
 //		// 使用Fabric API注册燃料，当然你可以使用Mixin
 //		FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600);

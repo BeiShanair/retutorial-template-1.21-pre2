@@ -1,6 +1,11 @@
-// 1.21	2024-06-24T21:16:48.6457171	ReTutorial/Tags for minecraft:block
+// 1.21	2024-06-26T16:11:27.8942855	ReTutorial/Tags for minecraft:block
+982786ef5eff7e980be921965dcfa7312e1a93fc data\minecraft\tags\block\walls.json
+9ddcfe396bb11b4107e5d5b21328104525119914 data\minecraft\tags\block\wooden_fences.json
 b1489b304f5005f179fe41757ec883803ca95f42 data\minecraft\tags\block\needs_diamond_tool.json
 396aca378c26b714b93c80865615e85f835c17ba data\minecraft\tags\block\needs_stone_tool.json
 143ec4907929b56e95affc86c38cb1add2b81f4e data\retutorial\tags\block\prospector_ore.json
-922c0bcfea7e7627d93c9c88148a05f0f83c3696 data\minecraft\tags\block\needs_iron_tool.json
+27de2f09da643b8006e9331df55de4cd78fb46ed data\minecraft\tags\block\wooden_buttons.json
+9ddcfe396bb11b4107e5d5b21328104525119914 data\minecraft\tags\block\fences.json
 26b7e296f0e674a8a6f06e29ae4a8afe3ded1ee9 data\minecraft\tags\block\mineable\pickaxe.json
+922c0bcfea7e7627d93c9c88148a05f0f83c3696 data\minecraft\tags\block\needs_iron_tool.json
+b8fad79a01b6fbb422d56ec8ab9613ef79f966bd data\minecraft\tags\block\fence_gates.json

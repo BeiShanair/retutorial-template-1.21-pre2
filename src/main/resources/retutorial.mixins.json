@@ -16,6 +16,7 @@
     "ItemRenderAccessor",
     "ItemRenderMixin",
     "MinecraftClientAccessor",
-    "ModelLoaderMixin"
+    "ModelLoaderMixin",
+    "RenderLayersMixin"
   ]
 }

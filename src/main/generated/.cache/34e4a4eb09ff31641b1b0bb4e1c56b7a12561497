@@ -1,4 +1,4 @@
-// 1.21	2024-06-14T18:01:38.7381538	ReTutorial/Model Definitions
+// 1.21	2024-06-24T21:16:48.6467151	ReTutorial/Model Definitions
 ad02907d0247d2dc61f0fe8fe1ae9c90b78ab5a8 assets\retutorial\blockstates\raw_ice_ether_block.json
 48255f3d1f918445cb17ee0d67e1bdb782404b65 assets\retutorial\models\item\ice_ether_ore.json
 6cea57535bc6979e478f63548d5d5011087a3a5c assets\retutorial\models\item\anthracite.json
@@ -12,5 +12,5 @@ d21db6f09d89c958b1df841ec16227c1cb2d1700 assets\retutorial\blockstates\ice_ether
 49a82780bad2f4ad39868afb559f92b02c1c0765 assets\retutorial\models\item\strawberry.json
 82ed29f90fa0974618424ec982e5fd9f4cd3dad3 assets\retutorial\models\block\raw_ice_ether_block.json
 19934d520e5daa37ee158de8c1685c0ee1918e57 assets\retutorial\blockstates\ice_ether_ore.json
-7200aa588cbd4a947b9462315593e07d6590e662 assets\retutorial\models\item\ice_ether_block.json
 8d974d52dc4f54aeeb77798a60eda78d4f0641e2 assets\retutorial\models\item\prospector.json
+7200aa588cbd4a947b9462315593e07d6590e662 assets\retutorial\models\item\ice_ether_block.json

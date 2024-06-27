@@ -17,6 +17,8 @@ import java.util.Map;
 public abstract class RenderLayersMixin {
     @Shadow @Final private static Map<Block, RenderLayer> BLOCKS;
 
+    // 注入代码，实现对门和活板门的渲染层级设置
+    // 这里的代码是在RenderLayers的<clinit>方法执行完毕后执行
     @Inject(method = "<clinit>", at = @At("RETURN"))
     private static void onBlocksInit(CallbackInfo ci) {
         BLOCKS.put(ModBlocks.ICE_ETHER_DOOR, RenderLayer.getCutout());

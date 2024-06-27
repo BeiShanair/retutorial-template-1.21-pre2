@@ -1,9 +1,11 @@
 package com.besson.retutotial.item.custom;
 
+import com.besson.retutotial.item.ModItems;
 import com.besson.retutotial.tags.ModBlockTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -23,9 +25,9 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class Prospector extends Item {
+    public ItemStack stack;
     public Prospector(Settings settings) {
         super(settings);
-
     }
 
     // 重写右键点击方块的方法
@@ -114,6 +116,7 @@ public class Prospector extends Item {
         RegistryEntry<Enchantment> enchantment =
                 registryManager.get(RegistryKeys.ENCHANTMENT).getEntry(Identifier.ofVanilla("sharpness")).get();
         stack.addEnchantment(enchantment, 5);
+        this.stack = stack;
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
@@ -125,5 +128,10 @@ public class Prospector extends Item {
         }else {
             tooltip.add(Text.translatable("item.retutorial.prospector.tooltip"));
         }
+    }
+    public static ItemStack enchant(EnchantmentLevelEntry info){
+        ItemStack stack = new ItemStack(ModItems.PROSPECTOR);
+        stack.addEnchantment(info.enchantment,info.level);
+        return stack;
     }
 }

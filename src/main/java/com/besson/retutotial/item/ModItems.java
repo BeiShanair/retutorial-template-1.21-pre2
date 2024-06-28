@@ -1,6 +1,7 @@
 package com.besson.retutotial.item;
 
 import com.besson.retutotial.ReTutorial;
+import com.besson.retutotial.item.custom.Hat;
 import com.besson.retutotial.item.custom.Prospector;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -32,6 +33,18 @@ public class ModItems {
     public static final Item FIRE_ETHER_HOE = registerItems("fire_ether_hoe", new HoeItem(ModToolMaterials.FIRE_ETHER,
             new Item.Settings().fireproof().attributeModifiers(
                     HoeItem.createAttributeModifiers(ModToolMaterials.FIRE_ETHER, -4.0f, 0.0f))));
+
+    public static final Item ICE_ETHER_HELMET = registerItems("ice_ether_helmet", new ArmorItem(ModArmorMaterials.ICE_ETHER,
+                    ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(37))));
+    public static final Item ICE_ETHER_CHESTPLATE = registerItems("ice_ether_chestplate", new ArmorItem(ModArmorMaterials.ICE_ETHER,
+                    ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(37))));
+    public static final Item ICE_ETHER_LEGGINGS = registerItems("ice_ether_leggings", new ArmorItem(ModArmorMaterials.ICE_ETHER,
+                    ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(37))));
+    public static final Item ICE_ETHER_BOOTS = registerItems("ice_ether_boots", new ArmorItem(ModArmorMaterials.ICE_ETHER,
+                    ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(37))));
+
+    public static final Item HAT = registerItems("hat", new Hat(Hat.Type.HAT, new Item.Settings()));
+
     // 注册方法，由原版改编（一堆方法整合）
     private static Item registerItems(String name, Item item) {
         // 由原版整合的方法

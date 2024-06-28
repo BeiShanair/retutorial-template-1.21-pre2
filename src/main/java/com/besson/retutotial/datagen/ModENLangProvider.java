@@ -10,6 +10,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModENLangProvider extends FabricLanguageProvider {
     public ModENLangProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+        // languageCode默认是en_us，也可以是其他语言，比如zh_cn
         super(dataOutput, "en_us", registryLookup);
 
     }
@@ -24,6 +25,11 @@ public class ModENLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.PROSPECTOR, "Prospector");
         translationBuilder.add(ModItems.PLATE, "Plate");
         translationBuilder.add(ModItems.FIRE_ETHER, "Fire Ether");
+        translationBuilder.add(ModItems.ICE_ETHER_HELMET, "Ice Ether Helmet");
+        translationBuilder.add(ModItems.ICE_ETHER_CHESTPLATE, "Ice Ether Chestplate");
+        translationBuilder.add(ModItems.ICE_ETHER_LEGGINGS, "Ice Ether Leggings");
+        translationBuilder.add(ModItems.ICE_ETHER_BOOTS, "Ice Ether Boots");
+        translationBuilder.add(ModItems.HAT, "Hat");
 
         translationBuilder.add(ModItems.FIRE_ETHER_AXE, "Fire Ether Axe");
         translationBuilder.add(ModItems.FIRE_ETHER_PICKAXE, "Fire Ether Pickaxe");

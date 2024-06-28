@@ -10,6 +10,8 @@ import net.minecraft.registry.tag.TagKey;
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
+    // 这个是枚举类
+    // 自定义材料
     FIRE_ETHER(BlockTags.INCORRECT_FOR_IRON_TOOL, 2031, 12.0f, 4.0f, 50,
             () -> Ingredient.ofItems(ModItems.FIRE_ETHER));
 

@@ -9,8 +9,10 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class ModBlockFamilies {
+    // 参考原版的写法，使用BlockFamily，用于数据生成
     private static final Map<Block, BlockFamily> BASE_BLOCKS_TO_FAMILIES = Maps.newHashMap();
 
+    // 在这里我们能够添加所有和ICE_ETHER相关的方块（同一个族的）
     public static final BlockFamily ICE_ETHER = register(ModBlocks.ICE_ETHER_BLOCK)
             .stairs(ModBlocks.ICE_ETHER_STAIRS)
             .slab(ModBlocks.ICE_ETHER_SLAB)

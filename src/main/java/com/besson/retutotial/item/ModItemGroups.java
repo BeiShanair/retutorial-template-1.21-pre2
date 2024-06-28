@@ -60,6 +60,12 @@ public class ModItemGroups {
                 entries.add(ModBlocks.ICE_ETHER_DOOR);
                 entries.add(ModBlocks.ICE_ETHER_TRAPDOOR);
 
+                entries.add(ModItems.ICE_ETHER_HELMET);
+                entries.add(ModItems.ICE_ETHER_CHESTPLATE);
+                entries.add(ModItems.ICE_ETHER_LEGGINGS);
+                entries.add(ModItems.ICE_ETHER_BOOTS);
+
+                entries.add(ModItems.HAT);
             }).build());
 
 

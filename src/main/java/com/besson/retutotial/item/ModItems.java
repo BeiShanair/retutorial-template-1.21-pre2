@@ -2,6 +2,7 @@ package com.besson.retutotial.item;
 
 import com.besson.retutotial.ReTutorial;
 import com.besson.retutotial.item.custom.Hat;
+import com.besson.retutotial.item.custom.ModArmorItem;
 import com.besson.retutotial.item.custom.Prospector;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -34,7 +35,7 @@ public class ModItems {
             new Item.Settings().fireproof().attributeModifiers(
                     HoeItem.createAttributeModifiers(ModToolMaterials.FIRE_ETHER, -4.0f, 0.0f))));
 
-    public static final Item ICE_ETHER_HELMET = registerItems("ice_ether_helmet", new ArmorItem(ModArmorMaterials.ICE_ETHER,
+    public static final Item ICE_ETHER_HELMET = registerItems("ice_ether_helmet", new ModArmorItem(ModArmorMaterials.ICE_ETHER,
                     ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(37))));
     public static final Item ICE_ETHER_CHESTPLATE = registerItems("ice_ether_chestplate", new ArmorItem(ModArmorMaterials.ICE_ETHER,
                     ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(37))));

@@ -1,6 +1,7 @@
 package com.besson.retutotial.item;
 
 import com.besson.retutotial.ReTutorial;
+import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.item.custom.Hat;
 import com.besson.retutotial.item.custom.ModArmorItem;
 import com.besson.retutotial.item.custom.Prospector;
@@ -45,6 +46,9 @@ public class ModItems {
                     ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(37))));
 
     public static final Item HAT = registerItems("hat", new Hat(Hat.Type.HAT, new Item.Settings()));
+
+    public static final Item STRAWBERRY_SEEDS = registerItems("strawberry_seeds", new AliasedBlockItem(ModBlocks.STRAWBERRY_CROP,
+            new Item.Settings()));
 
     // 注册方法，由原版改编（一堆方法整合）
     private static Item registerItems(String name, Item item) {

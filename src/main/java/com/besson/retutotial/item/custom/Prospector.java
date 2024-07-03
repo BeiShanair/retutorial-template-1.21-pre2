@@ -12,6 +12,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.item.Items;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.RegistryKeys;
@@ -25,7 +26,7 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class Prospector extends Item {
-    public ItemStack stack;
+    public ItemStack stack = this.getDefaultStack();
     public Prospector(Settings settings) {
         super(settings);
     }
@@ -82,6 +83,21 @@ public class Prospector extends Item {
         }
         // 每次使用后，耐久度减1
         context.getStack().damage(1, player, LivingEntity.getSlotForHand(context.getHand()));
+
+        player.sendMessage(Text.of("Durability: " + context.getStack().getDamage() + "/127"));
+
+        // 当耐久度大于50时，提示玩家，更换物品
+        // 并且将耐久度传递给新的物品
+        if (context.getStack().getDamage() > 50) {
+            player.sendMessage(Text.of("Your Prospector is getting old!"));
+            ItemStack newStack = new ItemStack(Items.STONE_AXE);
+            newStack.setDamage(context.getStack().getDamage());
+
+            context.getStack().getEnchantments().getEnchantmentEntries().forEach(enchantment -> {
+                newStack.addEnchantment(enchantment.getKey(), enchantment.getIntValue());
+            });
+            context.getPlayer().setStackInHand(context.getHand(), newStack);
+        }
         return ActionResult.SUCCESS;
     }
 
@@ -133,5 +149,12 @@ public class Prospector extends Item {
         ItemStack stack = new ItemStack(ModItems.PROSPECTOR);
         stack.addEnchantment(info.enchantment,info.level);
         return stack;
+    }
+
+    @Override
+    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
+        user.sendMessage(Text.of("You have used the Prospector!"));
+
+        return super.finishUsing(stack, world, user);
     }
 }

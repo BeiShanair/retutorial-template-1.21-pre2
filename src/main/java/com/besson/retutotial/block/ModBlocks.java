@@ -1,6 +1,7 @@
 package com.besson.retutotial.block;
 
 import com.besson.retutotial.ReTutorial;
+import com.besson.retutotial.block.custom.StrawberryCropBlock;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -36,6 +37,10 @@ public class ModBlocks {
             new DoorBlock(BlockSetType.STONE, AbstractBlock.Settings.copy(ICE_ETHER_BLOCK).nonOpaque()));
     public static final Block ICE_ETHER_TRAPDOOR = registerBlocks("ice_ether_trapdoor",
             new TrapdoorBlock(BlockSetType.IRON, AbstractBlock.Settings.copy(ICE_ETHER_BLOCK).nonOpaque()));
+    // 作物方块
+    // 由于我们不需要返回方块物品，所以不需要调用registerBlockItems方法
+    public static final Block STRAWBERRY_CROP = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "strawberry_crop"),
+            new StrawberryCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
 
     // 基于原版的方块物品注册方法
     public static void registerBlockItems(String name, Block block) {

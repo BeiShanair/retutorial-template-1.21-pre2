@@ -22,6 +22,8 @@ public class ModENLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.STRAWBERRY, "Strawberry");
         translationBuilder.add(ModItems.STRAWBERRY_SEEDS, "Strawberry Seeds");
         translationBuilder.add(ModItems.CHEESE, "Cheese");
+        translationBuilder.add(ModItems.CORN, "Corn");
+        translationBuilder.add(ModItems.CORN_SEEDS, "Corn Seeds");
         translationBuilder.add(ModItems.ANTHRACITE, "Anthracite");
         translationBuilder.add(ModItems.PROSPECTOR, "Prospector");
         translationBuilder.add(ModItems.PLATE, "Plate");

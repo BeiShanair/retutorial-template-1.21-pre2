@@ -12,6 +12,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.World;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 public class ModArmorItem extends ArmorItem {
@@ -19,10 +21,12 @@ public class ModArmorItem extends ArmorItem {
     // 使用ImmutableMap.Builder创建一个不可变的Map
     // put方法添加ArmorMaterial和StatusEffectInstance的对应关系
     // StatusEffectInstance的构造方法参数分别为：效果类型，持续时间，效果等级，？，是否显示粒子，是否显示图标
-    private static final Map<ArmorMaterial, StatusEffectInstance> MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
-                    .put(ModArmorMaterials.ICE_ETHER.value(), new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1000, 1
-                            , false, false, true)).build();
+    private static final Map<ArmorMaterial, List<StatusEffectInstance>> MAP =
+            (new ImmutableMap.Builder<ArmorMaterial, List<StatusEffectInstance>>())
+                    .put(ModArmorMaterials.ICE_ETHER.value(),
+                            Arrays.asList(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1000, 1, false, false, true),
+                                    new StatusEffectInstance(StatusEffects.SPEED, 1000, 1, false, false, true)))
+                    .build();
 
     public ModArmorItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
         super(material, type, settings);
@@ -40,13 +44,14 @@ public class ModArmorItem extends ArmorItem {
 
     // 为玩家添加盔甲效果
     private void evaluateArmorEffects(PlayerEntity player) {
-        for (Map.Entry<ArmorMaterial, StatusEffectInstance> entry : MAP.entrySet()) {
+        for (Map.Entry<ArmorMaterial, List<StatusEffectInstance>> entry : MAP.entrySet()) {
             ArmorMaterial material = entry.getKey();
-            StatusEffectInstance effect = entry.getValue();
+            List<StatusEffectInstance> effects = entry.getValue();
 
             // 如果玩家穿戴了指定材质的盔甲
             if (hasCorrectArmorOn(material, player)) {
-                addStatusEffectForMaterial(player, material, effect);
+                for (StatusEffectInstance effect : effects)
+                    addStatusEffectForMaterial(player, material, effect);
             }
         }
     }

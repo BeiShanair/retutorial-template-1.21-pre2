@@ -38,6 +38,8 @@ public class ModItemGroups {
                 entries.add(ModItems.ANTHRACITE);
                 entries.add(ModItems.PLATE);
                 entries.add(ModItems.FIRE_ETHER);
+                entries.add(ModItems.CORN);
+                entries.add(ModItems.CORN_SEEDS);
 
                 entries.add(ModItems.PROSPECTOR);
 

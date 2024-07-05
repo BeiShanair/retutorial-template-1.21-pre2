@@ -1,6 +1,7 @@
 package com.besson.retutotial.block;
 
 import com.besson.retutotial.ReTutorial;
+import com.besson.retutotial.block.custom.CornCropBlock;
 import com.besson.retutotial.block.custom.StrawberryCropBlock;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -41,6 +42,8 @@ public class ModBlocks {
     // 由于我们不需要返回方块物品，所以不需要调用registerBlockItems方法
     public static final Block STRAWBERRY_CROP = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "strawberry_crop"),
             new StrawberryCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
+    public static final Block CORN_CROP = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "corn_crop"),
+            new CornCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
 
     // 基于原版的方块物品注册方法
     public static void registerBlockItems(String name, Block block) {

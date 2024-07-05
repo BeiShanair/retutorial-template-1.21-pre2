@@ -44,6 +44,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 BlockStatePropertyLootCondition.builder(ModBlocks.STRAWBERRY_CROP)
                         .properties(StatePredicate.Builder.create().exactMatch(StrawberryCropBlock.AGE, 5));
         addDrop(ModBlocks.STRAWBERRY_CROP, cropDrops(ModBlocks.STRAWBERRY_CROP, ModItems.STRAWBERRY, ModItems.STRAWBERRY_SEEDS, builder));
+
+        BlockStatePropertyLootCondition.Builder builder2 =
+                BlockStatePropertyLootCondition.builder(ModBlocks.CORN_CROP)
+                        .properties(StatePredicate.Builder.create().exactMatch(StrawberryCropBlock.AGE, 8));
+        addDrop(ModBlocks.CORN_CROP, cropDrops(ModBlocks.CORN_CROP, ModItems.CORN, ModItems.CORN_SEEDS, builder2));
     }
     public LootTable.Builder likeCopperOreDrops(Block drop, Item item) {
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);

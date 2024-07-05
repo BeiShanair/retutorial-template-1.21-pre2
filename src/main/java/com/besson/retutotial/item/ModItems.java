@@ -44,10 +44,13 @@ public class ModItems {
                     ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(37))));
     public static final Item ICE_ETHER_BOOTS = registerItems("ice_ether_boots", new ArmorItem(ModArmorMaterials.ICE_ETHER,
                     ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(37))));
+    public static final Item CORN = registerItems("corn", new Item(new Item.Settings().food(ModFoodComponents.CORN)));
 
     public static final Item HAT = registerItems("hat", new Hat(Hat.Type.HAT, new Item.Settings()));
 
     public static final Item STRAWBERRY_SEEDS = registerItems("strawberry_seeds", new AliasedBlockItem(ModBlocks.STRAWBERRY_CROP,
+            new Item.Settings()));
+    public static final Item CORN_SEEDS = registerItems("corn_seeds", new AliasedBlockItem(ModBlocks.CORN_CROP,
             new Item.Settings()));
 
     // 注册方法，由原版改编（一堆方法整合）

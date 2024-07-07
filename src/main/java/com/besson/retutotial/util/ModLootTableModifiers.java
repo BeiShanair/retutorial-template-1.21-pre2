@@ -11,14 +11,18 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 
 public class ModLootTableModifiers {
+    // 修改战利品列表，使用Fabric的API
+    // 首先获取到对应的战利品表的ID
     private static final Identifier JUNGLE_TEMPLE_ID =
             Identifier.ofVanilla("chests/jungle_temple");
     private static final Identifier CREEPER_ID =
             Identifier.ofVanilla("entities/creeper");
-    private static final Identifier SUS_SAND_ID =
-            Identifier.ofVanilla("archaeology/desert_pyramid");
 
+    // 初始化方法
+    // 直接在这个方法中注册事件
     public static void modifyLootTables(){
+        // 一般使用LootTableEvents.MODIFY.register()方法
+        // REPLACE并不建议使用，而且在1.21版本中，并不太好写，需要配合mixin
         LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
             if (JUNGLE_TEMPLE_ID.equals(key.getValue())){
                 LootPool.Builder poolBuilder = LootPool.builder()

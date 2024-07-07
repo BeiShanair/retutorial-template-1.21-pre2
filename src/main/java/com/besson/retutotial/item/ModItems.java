@@ -34,6 +34,8 @@ public class ModItems {
             new Item.Settings().fireproof().attributeModifiers(
                     HoeItem.createAttributeModifiers(ModToolMaterials.FIRE_ETHER, -4.0f, 0.0f))));
 
+    // 盔甲物品的maxDamage中，最终结果为该物品基础耐久乘上这里填的系数
+    // 比如说，头盔的基础耐久是11，那么这里填的系数是37，那么最终的耐久就是407
     public static final Item ICE_ETHER_HELMET = registerItems("ice_ether_helmet", new ArmorItem(ModArmorMaterials.ICE_ETHER,
                     ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(37))));
     public static final Item ICE_ETHER_CHESTPLATE = registerItems("ice_ether_chestplate", new ArmorItem(ModArmorMaterials.ICE_ETHER,

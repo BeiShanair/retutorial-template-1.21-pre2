@@ -14,6 +14,7 @@ import net.minecraft.world.World;
 
 public class Hat extends Item implements Equipment {
     // 一个奇怪的实现，可以做头饰
+    // 当然，这个物品的3D模型需采用blockbench制作
     protected final Type type;
     public Hat(Type type, Settings settings) {
         super(settings);

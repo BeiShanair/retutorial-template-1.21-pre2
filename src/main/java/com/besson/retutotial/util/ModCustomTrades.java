@@ -1,6 +1,8 @@
 package com.besson.retutotial.util;
 
+import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.item.ModItems;
+import com.besson.retutotial.villager.ModVillagers;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffers;
@@ -27,5 +29,14 @@ public class ModCustomTrades {
         // 由于1.21版本的附魔更改，导致我们无法指定到确切附魔类型和附魔等级的附魔书或者工具
         // 原版提供的SellEnchantedToolFactory和EnchantBookFactory无法指定附魔类型和等级
         // 所以关于附魔物品的交易省略
+
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.ICE_ETHER_MASTER, 1, factories -> {
+            factories.add(new TradeOffers.SellItemFactory(ModItems.ICE_ETHER, 2, 9, 12, 2, 0.5f));
+            factories.add(new TradeOffers.BuyItemFactory(ModItems.RAW_ICE_ETHER, 2, 9, 12, 2));
+        });
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.ICE_ETHER_MASTER, 2, factories -> {
+            factories.add(new TradeOffers.SellItemFactory(ModBlocks.ICE_ETHER_BLOCK.asItem(), 4, 16, 12, 4, 0.5f));
+            factories.add(new TradeOffers.BuyItemFactory(ModBlocks.RAW_ICE_ETHER_BLOCK.asItem(), 4, 16, 12, 4));
+        });
     }
 }

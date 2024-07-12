@@ -8,6 +8,7 @@ import com.besson.retutotial.tags.ModBlockTags;
 import com.besson.retutotial.tags.ModItemTags;
 import com.besson.retutotial.util.ModCustomTrades;
 import com.besson.retutotial.util.ModLootTableModifiers;
+import com.besson.retutotial.villager.ModVillagers;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +34,7 @@ public class ReTutorial implements ModInitializer {
 
 		ModLootTableModifiers.modifyLootTables();
 		ModCustomTrades.registerModTrades();
+		ModVillagers.registerVillagers();
 
 //		// 使用Fabric API注册燃料，当然你可以使用Mixin
 //		FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600);

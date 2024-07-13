@@ -40,6 +40,7 @@ public class ModItemGroups {
                 entries.add(ModItems.FIRE_ETHER);
                 entries.add(ModItems.CORN);
                 entries.add(ModItems.CORN_SEEDS);
+                entries.add(ModItems.TEST);
 
                 entries.add(ModItems.PROSPECTOR);
 

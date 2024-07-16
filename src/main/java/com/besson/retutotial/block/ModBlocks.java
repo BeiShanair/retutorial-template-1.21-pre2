@@ -1,6 +1,7 @@
 package com.besson.retutotial.block;
 
 import com.besson.retutotial.ReTutorial;
+import com.besson.retutotial.block.custom.Test2x2;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -36,6 +37,9 @@ public class ModBlocks {
             new DoorBlock(BlockSetType.STONE, AbstractBlock.Settings.copy(ICE_ETHER_BLOCK).nonOpaque()));
     public static final Block ICE_ETHER_TRAPDOOR = registerBlocks("ice_ether_trapdoor",
             new TrapdoorBlock(BlockSetType.IRON, AbstractBlock.Settings.copy(ICE_ETHER_BLOCK).nonOpaque()));
+
+    public static final Block TEST2X2 = registerBlocks("test2x2",
+            new Test2x2(AbstractBlock.Settings.create().requiresTool().strength(3.0F, 3.0F).nonOpaque()));
 
     // 基于原版的方块物品注册方法
     public static void registerBlockItems(String name, Block block) {

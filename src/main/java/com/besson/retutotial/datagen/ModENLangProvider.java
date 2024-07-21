@@ -58,6 +58,13 @@ public class ModENLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add("item.retutorial.prospector.tooltip", "Hold \u00A72SHIFT\u00A7r for more information");
         translationBuilder.add("item.retutorial.prospector.shift_tooltip", "A tool used to prospect for ores.");
+
+        translationBuilder.add("sounds.retutorial.prospector_found_ore", "Prospector Found Ore");
+        translationBuilder.add("sounds.retutorial.block_break", "Block Break");
+        translationBuilder.add("sounds.retutorial.block_step", "Block Step");
+        translationBuilder.add("sounds.retutorial.block_place", "Block Place");
+        translationBuilder.add("sounds.retutorial.block_hit", "Block Hit");
+        translationBuilder.add("sounds.retutorial.block_fall", "Block Fall");
     }
 
 }

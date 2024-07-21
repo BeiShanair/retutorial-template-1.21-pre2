@@ -27,7 +27,7 @@ public class ModModelsProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_ICE_ETHER_BLOCK);
         // 作物的模型生成，罗列出所有的生长阶段
         blockStateModelGenerator.registerCrop(ModBlocks.STRAWBERRY_CROP, Properties.AGE_5, 0, 1, 2, 3, 4, 5);
-
+        // 按照十字交叉的方式生成作物的模型，参考浆果作物
         blockStateModelGenerator.blockStateCollector.accept(
                 VariantsBlockStateSupplier.create(ModBlocks.CORN_CROP)
                         .coordinate(BlockStateVariantMap.create(CornCropBlock.AGE)

@@ -1,6 +1,7 @@
 package com.besson.retutotial.item.custom;
 
 import com.besson.retutotial.item.ModItems;
+import com.besson.retutotial.sounds.ModSoundEvents;
 import com.besson.retutotial.tags.ModBlockTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.Screen;
@@ -17,6 +18,7 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
@@ -53,6 +55,7 @@ public class Prospector extends Item {
                             if (isRightBlock(blockState)) {
                                 // 输出找到的矿石名称，当然为了游戏的平衡性，就不输出坐标了
                                 player.sendMessage(Text.of("Found " + blockName + "!"));
+                                world.playSound(null, blockPos, ModSoundEvents.PROSPECTOR_FOUND_ORE, SoundCategory.BLOCKS, 1.0F, 1.0F);
                                 foundBlock = true;
                                 break;
                             }
@@ -72,6 +75,7 @@ public class Prospector extends Item {
 
                     if (isRightBlock(blockState)) {
                         player.sendMessage(Text.of("Found " + blockName + "!"));
+                        world.playSound(null, blockPos, ModSoundEvents.PROSPECTOR_FOUND_ORE, SoundCategory.BLOCKS, 1.0F, 1.0F);
                         foundBlock = true;
                         break;
                     }

@@ -65,6 +65,9 @@ public class ModENLangProvider extends FabricLanguageProvider {
         translationBuilder.add("sounds.retutorial.block_place", "Block Place");
         translationBuilder.add("sounds.retutorial.block_hit", "Block Hit");
         translationBuilder.add("sounds.retutorial.block_fall", "Block Fall");
+
+        translationBuilder.add(ModItems.TEST_MUSIC_DISC, "Test Music Disc");
+        translationBuilder.add("jukebox_song.retutorial.test", "高橋李依 - 小さな恋のうた");
     }
 
 }

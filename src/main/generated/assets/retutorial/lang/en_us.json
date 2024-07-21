@@ -34,5 +34,14 @@
   "item.retutorial.raw_ice_ether": "Raw Ice Ether",
   "item.retutorial.strawberry": "Strawberry",
   "item.retutorial.strawberry_seeds": "Strawberry Seeds",
-  "itemGroup.retutorial_group": "ReTutorial"
+  "item.retutorial.test": "Test",
+  "item.retutorial.test_music_disc": "Test Music Disc",
+  "itemGroup.retutorial_group": "ReTutorial",
+  "jukebox_song.retutorial.test": "高橋李依 - 小さな恋のうた",
+  "sounds.retutorial.block_break": "Block Break",
+  "sounds.retutorial.block_fall": "Block Fall",
+  "sounds.retutorial.block_hit": "Block Hit",
+  "sounds.retutorial.block_place": "Block Place",
+  "sounds.retutorial.block_step": "Block Step",
+  "sounds.retutorial.prospector_found_ore": "Prospector Found Ore"
 }

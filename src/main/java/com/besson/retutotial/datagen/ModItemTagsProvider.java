@@ -25,5 +25,7 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         // 如果要让盔甲可以锻造，我们需要将盔甲的材料加入到标签中
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.ICE_ETHER_HELMET, ModItems.ICE_ETHER_CHESTPLATE, ModItems.ICE_ETHER_LEGGINGS, ModItems.ICE_ETHER_BOOTS);
+        getOrCreateTagBuilder(ItemTags.CREEPER_DROP_MUSIC_DISCS)
+                .add(ModItems.TEST_MUSIC_DISC);
     }
 }

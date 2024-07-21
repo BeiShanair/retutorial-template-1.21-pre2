@@ -70,6 +70,8 @@ public class ModItemGroups {
                 entries.add(ModItems.ICE_ETHER_BOOTS);
 
                 entries.add(ModItems.HAT);
+
+                entries.add(ModItems.TEST_MUSIC_DISC);
             }).build());
 
 

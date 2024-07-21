@@ -34,5 +34,10 @@
     "sounds": [
       "retutorial:block_step"
     ]
+  },
+  "music_disc.test": {
+    "sounds": [
+      "retutorial:test"
+    ]
   }
 }

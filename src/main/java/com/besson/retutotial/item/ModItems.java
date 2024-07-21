@@ -5,10 +5,12 @@ import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.item.custom.Hat;
 import com.besson.retutotial.item.custom.ModArmorItem;
 import com.besson.retutotial.item.custom.Prospector;
+import com.besson.retutotial.sounds.ModJukeboxSongs;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 public class ModItems {
     // 注册物品
@@ -53,6 +55,8 @@ public class ModItems {
     public static final Item CORN_SEEDS = registerItems("corn_seeds", new AliasedBlockItem(ModBlocks.CORN_CROP,
             new Item.Settings()));
     public static final Item TEST = registerItems("test", new Item(new Item.Settings()));
+    public static final Item TEST_MUSIC_DISC = registerItems("test_music_disc",
+            new Item(new Item.Settings().maxCount(1).rarity(Rarity.RARE).jukeboxPlayable(ModJukeboxSongs.TEST)));
 
     // 注册方法，由原版改编（一堆方法整合）
     private static Item registerItems(String name, Item item) {

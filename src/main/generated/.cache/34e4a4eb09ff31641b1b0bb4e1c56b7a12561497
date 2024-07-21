@@ -1,4 +1,4 @@
-// 1.21	2024-07-12T21:16:27.5154868	ReTutorial/Model Definitions
+// 1.21	2024-07-21T23:22:20.2284908	ReTutorial/Model Definitions
 6d7c4733771423b1740a6ee032eef5920adfecdd assets\retutorial\models\item\ice_ether_leggings_emerald_trim.json
 41e3de8faf16fae8a8c9e98c455404bf6629f49e assets\retutorial\models\block\ice_ether_door_bottom_left.json
 dc56824730681302c90c82098ccef8f9b32e2dd2 assets\retutorial\models\item\fire_ether_sword.json
@@ -132,5 +132,6 @@ c1c339abe66aeb42858e5bae7fc969ed787adc6b assets\retutorial\models\block\corn_cro
 e5a41653b22cf273c5ed695dd7f4aeb5569c4be0 assets\retutorial\models\item\ice_ether_boots_amethyst_trim.json
 81d77e86366f2dca64752f33c96de1701bc55b3a assets\retutorial\models\block\ice_ether_door_top_left.json
 b5303adf3845d2f7eb61027ce48dd43320eb1564 assets\retutorial\models\item\ice_ether_button.json
+025a0e36f8e30ece2a41c163bea920a0428228b8 assets\retutorial\models\item\test_music_disc.json
 56ade6f1ef40e30b5fc3aabc7fe80f6d0c7ebf9f assets\retutorial\models\block\ice_ether_pressure_plate.json
 fdb374474b75530c56de90904866c9b1da132c21 assets\retutorial\models\block\ice_ether_fence_post.json

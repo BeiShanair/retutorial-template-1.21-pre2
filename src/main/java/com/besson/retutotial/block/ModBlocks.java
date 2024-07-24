@@ -45,6 +45,8 @@ public class ModBlocks {
             new StrawberryCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
     public static final Block CORN_CROP = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "corn_crop"),
             new CornCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
+    public static final Block OIL = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "oil"),
+            new FluidBlock(ModFluids.OIL, AbstractBlock.Settings.copy(Blocks.WATER)));
 
     // 基于原版的方块物品注册方法
     public static void registerBlockItems(String name, Block block) {

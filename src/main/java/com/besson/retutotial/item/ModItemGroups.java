@@ -72,6 +72,7 @@ public class ModItemGroups {
                 entries.add(ModItems.HAT);
 
                 entries.add(ModItems.TEST_MUSIC_DISC);
+                entries.add(ModItems.OIL_BUCKET);
             }).build());
 
 

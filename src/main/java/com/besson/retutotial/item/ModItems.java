@@ -2,6 +2,7 @@ package com.besson.retutotial.item;
 
 import com.besson.retutotial.ReTutorial;
 import com.besson.retutotial.block.ModBlocks;
+import com.besson.retutotial.block.ModFluids;
 import com.besson.retutotial.item.custom.Hat;
 import com.besson.retutotial.item.custom.ModArmorItem;
 import com.besson.retutotial.item.custom.Prospector;
@@ -57,6 +58,8 @@ public class ModItems {
     public static final Item TEST = registerItems("test", new Item(new Item.Settings()));
     public static final Item TEST_MUSIC_DISC = registerItems("test_music_disc",
             new Item(new Item.Settings().maxCount(1).rarity(Rarity.RARE).jukeboxPlayable(ModJukeboxSongs.TEST)));
+    public static final Item OIL_BUCKET = registerItems("oil_bucket", new BucketItem(
+            ModFluids.OIL, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
 
     // 注册方法，由原版改编（一堆方法整合）
     private static Item registerItems(String name, Item item) {

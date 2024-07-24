@@ -1,4 +1,4 @@
-// 1.21	2024-07-21T23:22:20.2284908	ReTutorial/Model Definitions
+// 1.21	2024-07-24T15:18:41.3715801	ReTutorial/Model Definitions
 6d7c4733771423b1740a6ee032eef5920adfecdd assets\retutorial\models\item\ice_ether_leggings_emerald_trim.json
 41e3de8faf16fae8a8c9e98c455404bf6629f49e assets\retutorial\models\block\ice_ether_door_bottom_left.json
 dc56824730681302c90c82098ccef8f9b32e2dd2 assets\retutorial\models\item\fire_ether_sword.json
@@ -110,6 +110,7 @@ f65eba9ce2314aef3d66661cca0ad6c994e7866c assets\retutorial\models\block\ice_ethe
 b60016f55df619f3499c851bdcc086ab2fe291d8 assets\retutorial\models\item\ice_ether_chestplate_diamond_trim.json
 50e7c767c86ec6bbefaa7e3c115d34d2d5ab5437 assets\retutorial\models\block\ice_ether_button_inventory.json
 2eebc64327ef614e34d8632e5919ae275f0d0010 assets\retutorial\models\item\ice_ether_boots_lapis_trim.json
+8fe9e6a5d73fdd0cbaea24fa130f9a50610d2f64 assets\retutorial\models\item\oil_bucket.json
 b891ffb56931f9dc81ef89b6f625f6f1a0f29d39 assets\retutorial\models\item\ice_ether_leggings_redstone_trim.json
 d21db6f09d89c958b1df841ec16227c1cb2d1700 assets\retutorial\blockstates\ice_ether_block.json
 b44ae8fdd96c7302c6d816d341e1e2a1cea948e5 assets\retutorial\models\block\ice_ether_fence_side.json

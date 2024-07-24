@@ -93,12 +93,13 @@ public class CornCropBlock extends CropBlock {
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         int age = this.getAge(state);
         float f = getAvailableMoisture(this, world, pos);
-        if (world.getBaseLightLevel(pos, 0) >= 9 && random.nextInt((int) (25.0F / f) + 1) == 0) {
+        if (world.getBaseLightLevel(pos, 0) >= 9 && random.nextInt((int) (25.0F / f) + 1) == 0
+        && age < this.getMaxAge()) {
 
             if (age == FIRST_STAGE_AGE) {
                 BlockState blockState = world.getBlockState(pos.up());
                 if (blockState.isOf(Blocks.AIR)) {
-                    world.setBlockState(pos.up(), this.withAge(SECOND_STAGE_AGE), Block.NOTIFY_LISTENERS);
+                    world.setBlockState(pos.up(), this.withAge(age + 1), Block.NOTIFY_LISTENERS);
                 }
             } else {
                 world.setBlockState(pos, this.withAge(age + 1), Block.NOTIFY_LISTENERS);

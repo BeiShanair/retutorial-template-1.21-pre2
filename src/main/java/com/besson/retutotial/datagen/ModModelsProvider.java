@@ -34,6 +34,8 @@ public class ModModelsProvider extends FabricModelProvider {
                                 .register(stage -> BlockStateVariant.create()
                                         .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.CORN_CROP, "_stage" + stage,
                                                 Models.CROSS, TextureMap::cross)))));
+
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BOX);
     }
 
     @Override

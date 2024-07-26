@@ -3,6 +3,7 @@ package com.besson.retutotial;
 import com.besson.retutotial.block.ModBlockFamilies;
 import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.block.ModFluids;
+import com.besson.retutotial.entity.ModBlockEntities;
 import com.besson.retutotial.item.ModItemGroups;
 import com.besson.retutotial.item.ModItems;
 import com.besson.retutotial.sounds.ModSoundEvents;
@@ -40,6 +41,7 @@ public class ReTutorial implements ModInitializer {
 		ModSoundEvents.registerSounds();
 		ModFluids.registerModFluids();
 
+		ModBlockEntities.registerBlockEntities();
 //		// 使用Fabric API注册燃料，当然你可以使用Mixin
 //		FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600);
 

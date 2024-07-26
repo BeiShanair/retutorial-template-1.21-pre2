@@ -1,9 +1,11 @@
 package com.besson.retutotial.block;
 
 import com.besson.retutotial.ReTutorial;
+import com.besson.retutotial.block.custom.BoxBlock;
 import com.besson.retutotial.block.custom.CornCropBlock;
 import com.besson.retutotial.block.custom.IceEtherBlock;
 import com.besson.retutotial.block.custom.StrawberryCropBlock;
+import com.besson.retutotial.entity.ModBlockEntities;
 import com.besson.retutotial.sounds.ModSoundEvents;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -48,6 +50,8 @@ public class ModBlocks {
             new CornCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
     public static final Block OIL = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "oil"),
             new FluidBlock(ModFluids.OIL, AbstractBlock.Settings.copy(Blocks.WATER)));
+    public static final Block BOX = registerBlocks("box",
+            new BoxBlock(AbstractBlock.Settings.copy(Blocks.CHEST), () -> ModBlockEntities.BOX));
 
     // 基于原版的方块物品注册方法
     public static void registerBlockItems(String name, Block block) {

@@ -57,6 +57,7 @@ public class ModENLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.ICE_ETHER_WALL, "Ice Ether Wall");
         translationBuilder.add(ModBlocks.ICE_ETHER_DOOR, "Ice Ether Door");
         translationBuilder.add(ModBlocks.ICE_ETHER_TRAPDOOR, "Ice Ether Trapdoor");
+        translationBuilder.add(ModBlocks.BOX, "Box");
 
         translationBuilder.add("itemGroup.retutorial_group", "ReTutorial");
 

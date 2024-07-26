@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "retutorial:block/box",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "retutorial:block/box"
+    },
+    "facing=south": {
+      "model": "retutorial:block/box",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "retutorial:block/box",
+      "y": 270
+    }
+  }
+}

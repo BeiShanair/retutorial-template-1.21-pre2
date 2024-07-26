@@ -1,4 +1,4 @@
-// 1.21	2024-07-24T15:18:41.3715801	ReTutorial/Model Definitions
+// 1.21	2024-07-26T16:16:39.107072	ReTutorial/Model Definitions
 6d7c4733771423b1740a6ee032eef5920adfecdd assets\retutorial\models\item\ice_ether_leggings_emerald_trim.json
 41e3de8faf16fae8a8c9e98c455404bf6629f49e assets\retutorial\models\block\ice_ether_door_bottom_left.json
 dc56824730681302c90c82098ccef8f9b32e2dd2 assets\retutorial\models\item\fire_ether_sword.json
@@ -117,8 +117,10 @@ b44ae8fdd96c7302c6d816d341e1e2a1cea948e5 assets\retutorial\models\block\ice_ethe
 750b9d35fbce89d6335b05f1d1c0268dc0fccf15 assets\retutorial\blockstates\ice_ether_pressure_plate.json
 866837153ec8ecd42c84b74070a16aee2158e654 assets\retutorial\models\item\ice_ether_chestplate_gold_trim.json
 169d84354e94985af84491dde55ce93ad24c52cd assets\retutorial\models\item\ice_ether_chestplate_iron_trim.json
+750f06344a1222ff61114bb8af44a0da58545aea assets\retutorial\models\item\ice_ether_horse_armor.json
 9daa627893653c92329f7fd7ea2a17d7c1371a78 assets\retutorial\blockstates\strawberry_crop.json
 0d95ce24d5c9e69a5b00a1acce5a000e3b7d4015 assets\retutorial\models\block\strawberry_crop_stage0.json
+edaeb207e60ebaba93f4a64407a9a13ef6e55b39 assets\retutorial\models\item\ice_ether_wolf_armor.json
 096c219ce5c593a286efa843cd63b3c1ea7bf237 assets\retutorial\models\block\corn_crop_stage4.json
 c7e9af810626dec2853e84ab0183a7bccebe57c1 assets\retutorial\models\item\strawberry_seeds.json
 1bd6ec375ea2097e268dec59cd85b0f31e197efd assets\retutorial\models\block\corn_crop_stage1.json

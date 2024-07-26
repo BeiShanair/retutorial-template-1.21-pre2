@@ -2,6 +2,7 @@ package com.besson.retutotial.block;
 
 import com.besson.retutotial.ReTutorial;
 import com.besson.retutotial.block.custom.CornCropBlock;
+import com.besson.retutotial.block.custom.IceEtherBlock;
 import com.besson.retutotial.block.custom.StrawberryCropBlock;
 import com.besson.retutotial.sounds.ModSoundEvents;
 import net.minecraft.block.*;
@@ -15,14 +16,14 @@ public class ModBlocks {
     public static final Block ICE_ETHER_ORE = registerBlocks("ice_ether_ore",
             new Block(AbstractBlock.Settings.create().requiresTool().strength(3.0F, 3.0F)));
     public static final Block ICE_ETHER_BLOCK = registerBlocks("ice_ether_block",
-            new Block(AbstractBlock.Settings.create().requiresTool().strength(4.5F, 6.0F).sounds(ModSoundEvents.BLOCK_SOUND_GROUP)));
+            new IceEtherBlock(AbstractBlock.Settings.create().requiresTool().strength(4.5F, 6.0F).sounds(ModSoundEvents.BLOCK_SOUND_GROUP).nonOpaque()));
     public static final Block RAW_ICE_ETHER_BLOCK = registerBlocks("raw_ice_ether_block",
             new Block(AbstractBlock.Settings.create().requiresTool().strength(3.0F, 3.0F)));
 
     public static final Block ICE_ETHER_STAIRS = registerBlocks("ice_ether_stairs",
             new StairsBlock(ICE_ETHER_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(ICE_ETHER_BLOCK)));
     public static final Block ICE_ETHER_SLAB = registerBlocks("ice_ether_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(ICE_ETHER_BLOCK)));
+            new SlabBlock(AbstractBlock.Settings.copy(ICE_ETHER_BLOCK).nonOpaque()));
     // 按钮的参数顺序变了，且少了一个wooden的属性
     public static final Block ICE_ETHER_BUTTON = registerBlocks("ice_ether_button",
             new ButtonBlock(BlockSetType.OAK, 10, AbstractBlock.Settings.copy(ICE_ETHER_BLOCK)));

@@ -13,7 +13,6 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.BlastingRecipe;
 import net.minecraft.recipe.CampfireCookingRecipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -61,6 +60,12 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 .criterion("has_item", RecipeProvider.conditionsFromItem(ModItems.ICE_ETHER))
                 .criterion("has_item", RecipeProvider.conditionsFromItem(Blocks.STONE))
                 .offerTo(exporter, Identifier.of(ReTutorial.MOD_ID, "ice_ether_ore"));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ANTHRACITE, 1)
+                .input(Items.COAL)
+                .input(ModItems.FIRE_ETHER)
+                .criterion("has_item", RecipeProvider.conditionsFromItem(Items.COAL))
+                .offerTo(exporter, Identifier.of(ReTutorial.MOD_ID, "anthracite"));
     }
     public static void offerCampfireCooking(RecipeExporter exporter, List<ItemConvertible> inputs, RecipeCategory category, ItemConvertible output, float experience, int cookingTime, String group) {
         RecipeProvider.offerMultipleOptions(exporter, RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new,

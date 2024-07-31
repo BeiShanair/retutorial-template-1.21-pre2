@@ -3,6 +3,7 @@ package com.besson.retutotial.item;
 import com.besson.retutotial.ReTutorial;
 import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.block.ModFluids;
+import com.besson.retutotial.item.custom.FireEther;
 import com.besson.retutotial.item.custom.Hat;
 import com.besson.retutotial.item.custom.ModArmorItem;
 import com.besson.retutotial.item.custom.Prospector;
@@ -22,7 +23,7 @@ public class ModItems {
     public static final Item ANTHRACITE = registerItems("anthracite", new Item(new Item.Settings()));
     public static final Item PROSPECTOR = registerItems("prospector", new Prospector(new Item.Settings().maxDamage(127)));
     public static final Item PLATE = registerItems("plate", new Item(new Item.Settings()));
-    public static final Item FIRE_ETHER = registerItems("fire_ether", new Item(new Item.Settings()));
+    public static final Item FIRE_ETHER = registerItems("fire_ether", new FireEther(new Item.Settings()));
     public static final Item FIRE_ETHER_SWORD = registerItems("fire_ether_sword", new SwordItem(ModToolMaterials.FIRE_ETHER,
                     new Item.Settings().fireproof().attributeModifiers(
                             SwordItem.createAttributeModifiers(ModToolMaterials.FIRE_ETHER, 3, -2.4f))));

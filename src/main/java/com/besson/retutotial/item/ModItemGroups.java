@@ -77,6 +77,8 @@ public class ModItemGroups {
 
                 entries.add(ModItems.ICE_ETHER_HORSE_ARMOR);
                 entries.add(ModItems.ICE_ETHER_WOLF_ARMOR);
+
+                entries.add(ModBlocks.POLISHING_MACHINE);
             }).build());
 
 

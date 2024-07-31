@@ -36,6 +36,7 @@ public class ModModelsProvider extends FabricModelProvider {
                                                 Models.CROSS, TextureMap::cross)))));
 
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BOX);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.POLISHING_MACHINE);
     }
 
     @Override

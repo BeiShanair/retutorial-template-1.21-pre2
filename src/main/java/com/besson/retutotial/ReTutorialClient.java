@@ -1,10 +1,13 @@
 package com.besson.retutotial;
 
 import com.besson.retutotial.block.ModFluids;
+import com.besson.retutotial.screen.ModScreenHandlers;
+import com.besson.retutotial.screen.PolishingMachineScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 
@@ -20,5 +23,8 @@ public class ReTutorialClient implements ClientModInitializer {
                         0x42413b
                 ));
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ModFluids.OIL, ModFluids.FLOWING_OIL);
+
+        // 注册屏幕
+        HandledScreens.register(ModScreenHandlers.POLISHING_MACHINE_SCREEN_HANDLER, PolishingMachineScreen::new);
     }
 }

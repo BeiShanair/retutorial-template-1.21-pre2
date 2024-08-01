@@ -6,6 +6,7 @@ import com.besson.retutotial.block.ModFluids;
 import com.besson.retutotial.entity.ModBlockEntities;
 import com.besson.retutotial.item.ModItemGroups;
 import com.besson.retutotial.item.ModItems;
+import com.besson.retutotial.recipe.ModRecipes;
 import com.besson.retutotial.screen.ModScreenHandlers;
 import com.besson.retutotial.sounds.ModSoundEvents;
 import com.besson.retutotial.tags.ModBlockTags;
@@ -44,5 +45,6 @@ public class ReTutorial implements ModInitializer {
 
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
+		ModRecipes.registerRecipes();
 	}
 }

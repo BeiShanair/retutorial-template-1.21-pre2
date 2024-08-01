@@ -1,0 +1,12 @@
+{
+  "type": "retutorial:polishing_machine",
+  "ingredients": [
+    {
+      "item": "retutorial:raw_ice_ether"
+    }
+  ],
+  "output": {
+    "count": 3,
+    "id": "retutorial:ice_ether"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "retutorial:polishing_machine",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    }
+  ],
+  "output": {
+    "id": "minecraft:diamond"
+  }
+}

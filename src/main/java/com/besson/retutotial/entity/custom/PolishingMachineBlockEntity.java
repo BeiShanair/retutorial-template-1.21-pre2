@@ -2,7 +2,7 @@ package com.besson.retutotial.entity.custom;
 
 import com.besson.retutotial.data.PolishingMachineData;
 import com.besson.retutotial.entity.ModBlockEntities;
-import com.besson.retutotial.item.ModItems;
+import com.besson.retutotial.recipe.PolishingMachineRecipe;
 import com.besson.retutotial.screen.PolishingMachineScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
@@ -10,10 +10,12 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.recipe.RecipeEntry;
+import net.minecraft.recipe.input.SingleStackRecipeInput;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -23,6 +25,8 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class PolishingMachineBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory<PolishingMachineData>, ImplementedInventory {
     // 方块实体，继承BlockEntity
@@ -145,9 +149,23 @@ public class PolishingMachineBlockEntity extends BlockEntity implements Extended
 
     // 制作物品
     private void craftItem() {
-        ItemStack result = new ItemStack(ModItems.ICE_ETHER);
-        this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
+//        ItemStack result = new ItemStack(ModItems.ICE_ETHER);
+//        this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
+        Optional<RecipeEntry<PolishingMachineRecipe>> recipe = getCurrentRecipe();
+
+        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
+                getStack(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
+
         this.removeStack(INPUT_SLOT, 1);
+    }
+
+    private Optional<RecipeEntry<PolishingMachineRecipe>> getCurrentRecipe() {
+        SimpleInventory inv = new SimpleInventory(this.size());
+        for (int i = 0; i < this.size(); i++) {
+            inv.setStack(i, this.getStack(i));
+        }
+        return getWorld().getRecipeManager().getFirstMatch(PolishingMachineRecipe.Type.INSTANCE,
+                new SingleStackRecipeInput(inv.getStack(0)), getWorld());
     }
 
     // 判断是否制作完成
@@ -162,16 +180,20 @@ public class PolishingMachineBlockEntity extends BlockEntity implements Extended
 
     // 判断是否有配方
     private boolean hasRecipe() {
-        ItemStack result = new ItemStack(ModItems.ICE_ETHER);
-        boolean hasInput = getStack(INPUT_SLOT).getItem() == Items.ICE;
-        return hasInput && canInsertAmountIntoOutputSlot(result) &&
-                canInsertItemIntoOutputSlot(result.getItem());
+//        ItemStack result = new ItemStack(ModItems.ICE_ETHER);
+//        boolean hasInput = getStack(INPUT_SLOT).getItem() == Items.ICE;
+//        return hasInput && canInsertAmountIntoOutputSlot(result) &&
+//                canInsertItemIntoOutputSlot(result.getItem());
+        Optional<RecipeEntry<PolishingMachineRecipe>> recipe = getCurrentRecipe();
+
+        return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().value().getResult(null)) &&
+                canInsertItemIntoOutputSlot(recipe.get().value().getResult(null).getItem());
     }
 
     // 判断是否可以插入物品到输出槽
     private boolean canInsertAmountIntoOutputSlot(ItemStack result) {
-        return this.getStack(OUTPUT_SLOT).getCount() + result.getCount() <=
-                getStack(OUTPUT_SLOT).getMaxCount();
+        System.out.println(getStack(OUTPUT_SLOT).getMaxCount());
+        return this.getStack(OUTPUT_SLOT).getCount() + result.getCount() <= 64;
     }
 
     // 判断是否可以插入物品到输出槽
@@ -183,7 +205,7 @@ public class PolishingMachineBlockEntity extends BlockEntity implements Extended
     // 判断输出槽是否有空位
     private boolean isOutputSlotAvailable() {
         return this.getStack(OUTPUT_SLOT).isEmpty() ||
-                this.getStack(OUTPUT_SLOT).getCount() < this.getStack(OUTPUT_SLOT).getMaxCount();
+                this.getStack(OUTPUT_SLOT).getCount() < 64;
     }
 
     // 获取屏幕打开数据，也就是我们编写的数据文件

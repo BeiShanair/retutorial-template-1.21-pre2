@@ -40,6 +40,7 @@ public class ModModelsProvider extends FabricModelProvider {
         // 生成简单的方块状态文件，不生成模型文件
 //        blockStateModelGenerator.registerSimpleState(ModBlocks.SIMPLE_BLOCK);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.SIMPLE_BLOCK);
+        // 因为SimpleFenceBlock有我们自定义的属性，所以这里不便使用数据生成器生成方块状态文件
     }
 
     @Override

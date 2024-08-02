@@ -22,6 +22,9 @@
 		],
 		"client": [
 			"com.besson.retutotial.ReTutorialClient"
+		],
+		"rei_client": [
+			"com.besson.retutotial.compat.ModREIClientPlugins"
 		]
 	},
 	"mixins": [

@@ -192,7 +192,6 @@ public class PolishingMachineBlockEntity extends BlockEntity implements Extended
 
     // 判断是否可以插入物品到输出槽
     private boolean canInsertAmountIntoOutputSlot(ItemStack result) {
-        System.out.println(getStack(OUTPUT_SLOT).getMaxCount());
         return this.getStack(OUTPUT_SLOT).getCount() + result.getCount() <= 64;
     }
 

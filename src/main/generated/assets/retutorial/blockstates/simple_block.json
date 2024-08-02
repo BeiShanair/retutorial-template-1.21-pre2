@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "retutorial:block/simple_block",
+      "y": 90
+    },
+    "facing=north": {
       "model": "retutorial:block/simple_block"
+    },
+    "facing=south": {
+      "model": "retutorial:block/simple_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "retutorial:block/simple_block",
+      "y": 270
     }
   }
 }

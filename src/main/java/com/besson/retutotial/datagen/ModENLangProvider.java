@@ -33,7 +33,7 @@ public class ModENLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.ICE_ETHER_LEGGINGS, "Ice Ether Leggings");
         translationBuilder.add(ModItems.ICE_ETHER_BOOTS, "Ice Ether Boots");
         translationBuilder.add(ModItems.HAT, "Hat");
-        translationBuilder.add(ModItems.TEST, "Test");
+        translationBuilder.add(ModItems.SIMPLE_ITEM, "Simple Item");
 
         translationBuilder.add(ModItems.FIRE_ETHER_AXE, "Fire Ether Axe");
         translationBuilder.add(ModItems.FIRE_ETHER_PICKAXE, "Fire Ether Pickaxe");
@@ -58,6 +58,7 @@ public class ModENLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.ICE_ETHER_DOOR, "Ice Ether Door");
         translationBuilder.add(ModBlocks.ICE_ETHER_TRAPDOOR, "Ice Ether Trapdoor");
         translationBuilder.add(ModBlocks.BOX, "Box");
+        translationBuilder.add(ModBlocks.SIMPLE_BLOCK, "Simple Block");
 
         translationBuilder.add("itemGroup.retutorial_group", "ReTutorial");
 

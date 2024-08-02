@@ -56,7 +56,6 @@ public class ModItems {
             new Item.Settings()));
     public static final Item CORN_SEEDS = registerItems("corn_seeds", new AliasedBlockItem(ModBlocks.CORN_CROP,
             new Item.Settings()));
-    public static final Item TEST = registerItems("test", new Item(new Item.Settings()));
     public static final Item TEST_MUSIC_DISC = registerItems("test_music_disc",
             new Item(new Item.Settings().maxCount(1).rarity(Rarity.RARE).jukeboxPlayable(ModJukeboxSongs.TEST)));
     public static final Item OIL_BUCKET = registerItems("oil_bucket", new BucketItem(
@@ -67,6 +66,7 @@ public class ModItems {
     public static final Item ICE_ETHER_WOLF_ARMOR = registerItems("ice_ether_wolf_armor",
             new AnimalArmorItem(ModArmorMaterials.ICE_ETHER, AnimalArmorItem.Type.CANINE, true,
                     new Item.Settings().maxDamage(ArmorItem.Type.BODY.getMaxDamage(4))));
+    public static final Item SIMPLE_ITEM = registerItems("simple_item", new Item(new Item.Settings()));
 
     // 注册方法，由原版改编（一堆方法整合）
     private static Item registerItems(String name, Item item) {

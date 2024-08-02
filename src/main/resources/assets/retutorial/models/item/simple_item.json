@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "retutorial:item/test",
-		"particle": "retutorial:item/test"
+		"0": "retutorial:item/simple_item",
+		"particle": "retutorial:item/simple_item"
 	},
 	"elements": [
 		{

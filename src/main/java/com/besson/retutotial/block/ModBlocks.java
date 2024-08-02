@@ -52,6 +52,9 @@ public class ModBlocks {
     public static final Block POLISHING_MACHINE = registerBlocks("polishing_machine",
             new PolishingMachine(AbstractBlock.Settings.copy(Blocks.STONE)));
 
+    public static final Block SIMPLE_BLOCK = registerBlocks("simple_block",
+            new SimpleBlock(AbstractBlock.Settings.copy(Blocks.STONE)));
+
     // 基于原版的方块物品注册方法
     public static void registerBlockItems(String name, Block block) {
         Item item = Registry.register(Registries.ITEM, Identifier.of(ReTutorial.MOD_ID, name), new BlockItem(block, new Item.Settings()));

@@ -37,6 +37,7 @@ public class ModModelsProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BOX);
         blockStateModelGenerator.registerSimpleState(ModBlocks.POLISHING_MACHINE);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.SIMPLE_BLOCK);
     }
 
     @Override

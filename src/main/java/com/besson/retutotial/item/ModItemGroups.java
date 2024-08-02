@@ -40,7 +40,7 @@ public class ModItemGroups {
                 entries.add(ModItems.FIRE_ETHER);
                 entries.add(ModItems.CORN);
                 entries.add(ModItems.CORN_SEEDS);
-                entries.add(ModItems.TEST);
+                entries.add(ModItems.SIMPLE_ITEM);
 
                 entries.add(ModItems.PROSPECTOR);
 
@@ -79,6 +79,8 @@ public class ModItemGroups {
                 entries.add(ModItems.ICE_ETHER_WOLF_ARMOR);
 
                 entries.add(ModBlocks.POLISHING_MACHINE);
+
+                entries.add(ModBlocks.SIMPLE_BLOCK);
             }).build());
 
 

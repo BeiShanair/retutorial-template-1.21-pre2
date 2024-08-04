@@ -59,5 +59,12 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
         // fence默认和下界砖栅栏相连，如果要和其他木制栅栏相连，需要在这个标签里（二者只能选其一）
         getOrCreateTagBuilder(BlockTags.WOODEN_FENCES)
                 .add(ModBlocks.ICE_ETHER_FENCE);
+
+        // 注册木头可以作为燃烧物
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.ICE_ETHER_LOG)
+                .add(ModBlocks.ICE_ETHER_WOOD)
+                .add(ModBlocks.STRIPPED_ICE_ETHER_LOG)
+                .add(ModBlocks.STRIPPED_ICE_ETHER_WOOD);
     }
 }

@@ -57,6 +57,18 @@ public class ModBlocks {
 
     public static final Block SIMPLE_FENCE = registerBlocks("simple_fence",
             new SimpleFenceBlock(AbstractBlock.Settings.copy(Blocks.STONE).nonOpaque()));
+    public static final Block ICE_ETHER_LOG = registerBlocks("ice_ether_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG).strength(4.0F)));
+    public static final Block ICE_ETHER_WOOD = registerBlocks("ice_ether_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD).strength(4.0F)));
+    public static final Block STRIPPED_ICE_ETHER_LOG = registerBlocks("stripped_ice_ether_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG).strength(4.0F)));
+    public static final Block STRIPPED_ICE_ETHER_WOOD = registerBlocks("stripped_ice_ether_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD).strength(4.0F)));
+    public static final Block ICE_ETHER_PLANKS = registerBlocks("ice_ether_planks",
+            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(4.0F)));
+    public static final Block ICE_ETHER_LEAVES = registerBlocks("ice_ether_leaves",
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque()));
 
     // 基于原版的方块物品注册方法
     public static void registerBlockItems(String name, Block block) {

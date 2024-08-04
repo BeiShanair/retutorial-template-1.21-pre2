@@ -82,6 +82,13 @@ public class ModItemGroups {
 
                 entries.add(ModBlocks.SIMPLE_BLOCK);
                 entries.add(ModBlocks.SIMPLE_FENCE);
+
+                entries.add(ModBlocks.ICE_ETHER_LOG);
+                entries.add(ModBlocks.ICE_ETHER_WOOD);
+                entries.add(ModBlocks.STRIPPED_ICE_ETHER_LOG);
+                entries.add(ModBlocks.STRIPPED_ICE_ETHER_WOOD);
+                entries.add(ModBlocks.ICE_ETHER_PLANKS);
+                entries.add(ModBlocks.ICE_ETHER_LEAVES);
             }).build());
 
 

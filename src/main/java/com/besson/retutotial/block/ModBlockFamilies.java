@@ -24,6 +24,15 @@ public class ModBlockFamilies {
             .door(ModBlocks.ICE_ETHER_DOOR)
             .trapdoor(ModBlocks.ICE_ETHER_TRAPDOOR)
             .build();
+
+    // 编写一个方块组
+    // 但是方块组和悬挂类告示牌没有关联，只有普通的sign方法
+    // 所以悬挂类告示牌需要单独注册
+    public static final BlockFamily ICE_ETHER_WOOD = register(ModBlocks.ICE_ETHER_PLANKS)
+            .sign(ModBlocks.ICE_ETHER_SIGN, ModBlocks.ICE_ETHER_WALL_SIGN)
+            .group("wooden")
+            .unlockCriterionName("has_planks")
+            .build();
     public static BlockFamily.Builder register(Block baseBlock) {
         BlockFamily.Builder builder = new BlockFamily.Builder(baseBlock);
         BlockFamily blockFamily = BASE_BLOCKS_TO_FAMILIES.put(baseBlock, builder.build());

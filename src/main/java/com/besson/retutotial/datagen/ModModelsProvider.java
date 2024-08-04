@@ -44,7 +44,6 @@ public class ModModelsProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerLog(ModBlocks.ICE_ETHER_LOG).log(ModBlocks.ICE_ETHER_LOG).wood(ModBlocks.ICE_ETHER_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ICE_ETHER_LOG).log(ModBlocks.STRIPPED_ICE_ETHER_LOG).wood(ModBlocks.STRIPPED_ICE_ETHER_WOOD);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ICE_ETHER_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ICE_ETHER_LEAVES);
     }
 
@@ -77,5 +76,8 @@ public class ModModelsProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.ICE_ETHER_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.registerWolfArmor(ModItems.ICE_ETHER_WOLF_ARMOR);
+
+        // 方块组不会生成悬挂标牌的模型，所以我们需要手动编写
+        itemModelGenerator.register(ModItems.ICE_ETHER_HANGING_SIGN, Models.GENERATED);
     }
 }

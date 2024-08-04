@@ -17,6 +17,10 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven { url "https://maven.shedaniel.me" }
+	maven {
+		name = 'TerraformersMC'
+		url = 'https://maven.terraformersmc.com/'
+	}
 }
 
 fabricApi {
@@ -34,6 +38,9 @@ dependencies {
 
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:16.0.744"
 	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:16.0.744"
+
+	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1"
+	include "com.terraformersmc.terraform-wood:terraform-wood-v1:11.0.0-alpha.1"
 	
 }
 

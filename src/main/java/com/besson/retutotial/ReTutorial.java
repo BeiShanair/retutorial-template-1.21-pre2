@@ -63,5 +63,7 @@ public class ReTutorial implements ModInitializer {
 
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_PLANKS, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_LEAVES, 30, 60);
+
+		
 	}
 }

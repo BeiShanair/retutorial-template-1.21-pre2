@@ -68,6 +68,12 @@ public class ModItems {
                     new Item.Settings().maxDamage(ArmorItem.Type.BODY.getMaxDamage(4))));
     public static final Item SIMPLE_ITEM = registerItems("simple_item", new Item(new Item.Settings()));
 
+    // 注册告示牌物品
+    public static final Item ICE_ETHER_SIGN = registerItems("ice_ether_sign",
+            new SignItem(new Item.Settings().maxCount(16), ModBlocks.ICE_ETHER_SIGN, ModBlocks.ICE_ETHER_WALL_SIGN));
+    public static final Item ICE_ETHER_HANGING_SIGN = registerItems("ice_ether_hanging_sign",
+            new HangingSignItem(ModBlocks.ICE_ETHER_HANGING_SIGN, ModBlocks.ICE_ETHER_WALL_HANGING_SIGN, new Item.Settings().maxCount(16)));
+
     // 注册方法，由原版改编（一堆方法整合）
     private static Item registerItems(String name, Item item) {
         // 由原版整合的方法

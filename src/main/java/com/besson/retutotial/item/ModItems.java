@@ -3,11 +3,13 @@ package com.besson.retutotial.item;
 import com.besson.retutotial.ReTutorial;
 import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.block.ModFluids;
+import com.besson.retutotial.entity.ModBoats;
 import com.besson.retutotial.item.custom.FireEther;
 import com.besson.retutotial.item.custom.Hat;
 import com.besson.retutotial.item.custom.ModArmorItem;
 import com.besson.retutotial.item.custom.Prospector;
 import com.besson.retutotial.sounds.ModJukeboxSongs;
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -66,6 +68,9 @@ public class ModItems {
     public static final Item ICE_ETHER_WOLF_ARMOR = registerItems("ice_ether_wolf_armor",
             new AnimalArmorItem(ModArmorMaterials.ICE_ETHER, AnimalArmorItem.Type.CANINE, true,
                     new Item.Settings().maxDamage(ArmorItem.Type.BODY.getMaxDamage(4))));
+
+    public static final Item ICE_ETHER_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.ICE_ETHER_BOAT, ModBoats.ICE_ETHER_BOAT_KEY, false);
+    public static final Item ICE_ETHER_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.ICE_ETHER_CHEST_BOAT, ModBoats.ICE_ETHER_BOAT_KEY, true);
     public static final Item SIMPLE_ITEM = registerItems("simple_item", new Item(new Item.Settings()));
 
     // 注册告示牌物品

@@ -79,5 +79,8 @@ public class ModModelsProvider extends FabricModelProvider {
 
         // 方块组不会生成悬挂标牌的模型，所以我们需要手动编写
         itemModelGenerator.register(ModItems.ICE_ETHER_HANGING_SIGN, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.ICE_ETHER_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ICE_ETHER_CHEST_BOAT, Models.GENERATED);
     }
 }

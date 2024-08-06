@@ -1,4 +1,4 @@
-// 1.21	2024-08-04T14:27:35.9461486	ReTutorial/Model Definitions
+// 1.21	2024-08-06T13:24:43.3184663	ReTutorial/Model Definitions
 6d7c4733771423b1740a6ee032eef5920adfecdd assets\retutorial\models\item\ice_ether_leggings_emerald_trim.json
 41e3de8faf16fae8a8c9e98c455404bf6629f49e assets\retutorial\models\block\ice_ether_door_bottom_left.json
 d993635869a9295e15e1f38c1cf9e220a02c2ebf assets\retutorial\models\block\stripped_ice_ether_log_horizontal.json
@@ -10,6 +10,8 @@ e662d010575624e0384418b2f385bb6e06c450ef assets\retutorial\models\item\corn_seed
 befabe9fe3d5b05f36d8e16a0bf3f0e65d0a9a21 assets\retutorial\blockstates\ice_ether_slab.json
 c506005201db0ca9f1c03ecb2b41d1c4111328ed assets\retutorial\blockstates\polishing_machine.json
 dabe64e7007a1f0abac2a207babadd0b95f1781c assets\retutorial\models\item\ice_ether_chestplate_amethyst_trim.json
+23d0a573e022c07f083e92cf2a408c6a0d982b20 assets\retutorial\models\item\ice_ether_chest_boat.json
+b5ffb5cee752ceec00b43e11a8964117911a083e assets\retutorial\models\item\ice_ether_boat.json
 eeacb2f38fe5d12fa196ef7671789041a409b021 assets\retutorial\models\block\ice_ether_slab.json
 80517376c13a3f752ec6ea3f980fc5bdd97f5cb7 assets\retutorial\models\block\corn_crop_stage2.json
 1fbb481a38fb2208535cbd7bde97e06556eef164 assets\retutorial\models\item\raw_ice_ether_block.json
@@ -159,8 +161,8 @@ f4e6b147b1967bfbf7518d0307edf70ab5967b5c assets\retutorial\models\item\ice_ether
 fce6e2953e70d91446bbc53a31c647e7ec903635 assets\retutorial\models\block\ice_ether_door_bottom_right.json
 8fa7220753b027c6016d15383788efe369095a96 assets\retutorial\models\item\ice_ether_leggings_iron_trim.json
 c7b1f8c832dacf8d214a4a436ecef80a2a08bedd assets\retutorial\models\block\ice_ether_ore.json
-0c15df2ec0c5269dab9e9c1f8f210ef435cc824a assets\retutorial\models\item\ice_ether_leggings_quartz_trim.json
 c1c339abe66aeb42858e5bae7fc969ed787adc6b assets\retutorial\models\block\corn_crop_stage7.json
+0c15df2ec0c5269dab9e9c1f8f210ef435cc824a assets\retutorial\models\item\ice_ether_leggings_quartz_trim.json
 6fd411eda0ab1bc173b1cd744b1ff70c0c0ff3fb assets\retutorial\models\item\cheese.json
 e5a41653b22cf273c5ed695dd7f4aeb5569c4be0 assets\retutorial\models\item\ice_ether_boots_amethyst_trim.json
 81d77e86366f2dca64752f33c96de1701bc55b3a assets\retutorial\models\block\ice_ether_door_top_left.json

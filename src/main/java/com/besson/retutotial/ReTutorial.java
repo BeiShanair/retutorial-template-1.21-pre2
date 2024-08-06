@@ -4,6 +4,7 @@ import com.besson.retutotial.block.ModBlockFamilies;
 import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.block.ModFluids;
 import com.besson.retutotial.entity.ModBlockEntities;
+import com.besson.retutotial.entity.ModBoats;
 import com.besson.retutotial.item.ModItemGroups;
 import com.besson.retutotial.item.ModItems;
 import com.besson.retutotial.recipe.ModRecipes;
@@ -48,6 +49,7 @@ public class ReTutorial implements ModInitializer {
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
 		ModRecipes.registerRecipes();
+		ModBoats.registerBoats();
 
 		// 原木和去皮原木、木头和去皮木头的注册（原版是硬编码，在AxeItem的STRIPPED_BLOCKS中）
 		StrippableBlockRegistry.register(ModBlocks.ICE_ETHER_LOG, ModBlocks.STRIPPED_ICE_ETHER_LOG);

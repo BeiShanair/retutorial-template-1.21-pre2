@@ -1,8 +1,10 @@
 package com.besson.retutotial;
 
 import com.besson.retutotial.block.ModFluids;
+import com.besson.retutotial.entity.ModBoats;
 import com.besson.retutotial.screen.ModScreenHandlers;
 import com.besson.retutotial.screen.PolishingMachineScreen;
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
@@ -26,5 +28,7 @@ public class ReTutorialClient implements ClientModInitializer {
 
         // 注册屏幕
         HandledScreens.register(ModScreenHandlers.POLISHING_MACHINE_SCREEN_HANDLER, PolishingMachineScreen::new);
+
+        TerraformBoatClientHelper.registerModelLayers(ModBoats.ICE_ETHER_BOAT, false);
     }
 }

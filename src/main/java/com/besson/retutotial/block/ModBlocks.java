@@ -4,6 +4,7 @@ import com.besson.retutotial.ReTutorial;
 import com.besson.retutotial.block.custom.*;
 import com.besson.retutotial.entity.ModBlockEntities;
 import com.besson.retutotial.sounds.ModSoundEvents;
+import com.besson.retutotial.world.tree.ModTreeGenerator;
 import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
@@ -73,6 +74,8 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(4.0F)));
     public static final Block ICE_ETHER_LEAVES = registerBlocks("ice_ether_leaves",
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque()));
+    public static final Block ICE_ETHER_TREE_SAPLING = registerBlocks("ice_ether_tree_sapling",
+            new SaplingBlock(ModTreeGenerator.ICE_ETHER_TREE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
 
     // 我们借助Terraform API来实现告示牌的注册
     // 首先需要一些Identifier，这些是材质文件的路径

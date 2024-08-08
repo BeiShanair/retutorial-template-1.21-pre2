@@ -45,6 +45,8 @@ public class ModModelsProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks.ICE_ETHER_LOG).log(ModBlocks.ICE_ETHER_LOG).wood(ModBlocks.ICE_ETHER_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ICE_ETHER_LOG).log(ModBlocks.STRIPPED_ICE_ETHER_LOG).wood(ModBlocks.STRIPPED_ICE_ETHER_WOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ICE_ETHER_LEAVES);
+
+        blockStateModelGenerator.registerTintableCross(ModBlocks.ICE_ETHER_TREE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
     }
 
     @Override

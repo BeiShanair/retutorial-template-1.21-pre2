@@ -25,6 +25,7 @@ public abstract class RenderLayersMixin {
         BLOCKS.put(ModBlocks.ICE_ETHER_TRAPDOOR, RenderLayer.getCutout());
         BLOCKS.put(ModBlocks.STRAWBERRY_CROP, RenderLayer.getCutout());
         BLOCKS.put(ModBlocks.CORN_CROP, RenderLayer.getCutout());
+        BLOCKS.put(ModBlocks.ICE_ETHER_TREE_SAPLING, RenderLayer.getCutout());
 
         BLOCKS.put(ModBlocks.ICE_ETHER_BLOCK, RenderLayer.getTranslucent());
         BLOCKS.put(ModBlocks.ICE_ETHER_SLAB, RenderLayer.getTranslucent());

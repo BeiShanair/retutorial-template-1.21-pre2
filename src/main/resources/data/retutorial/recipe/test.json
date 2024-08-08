@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "retutorial:fire_ether"
+  },
+  "base": {
+    "item": "minecraft:oak_log"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:coal"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}

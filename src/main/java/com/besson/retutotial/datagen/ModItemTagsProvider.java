@@ -43,5 +43,8 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModBlocks.ICE_ETHER_WOOD.asItem())
                 .add(ModBlocks.STRIPPED_ICE_ETHER_LOG.asItem())
                 .add(ModBlocks.STRIPPED_ICE_ETHER_WOOD.asItem());
+
+        getOrCreateTagBuilder(ModItemTags.ICE_ETHER_ARMOR)
+                .add(ModItems.ICE_ETHER_HELMET, ModItems.ICE_ETHER_CHESTPLATE, ModItems.ICE_ETHER_LEGGINGS, ModItems.ICE_ETHER_BOOTS);
     }
 }

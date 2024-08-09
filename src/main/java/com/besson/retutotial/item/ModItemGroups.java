@@ -96,6 +96,7 @@ public class ModItemGroups {
                 entries.add(ModItems.ICE_ETHER_BOAT);
                 entries.add(ModItems.ICE_ETHER_CHEST_BOAT);
                 entries.add(ModBlocks.ICE_ETHER_TREE_SAPLING);
+                entries.add(ModBlocks.SIMPLE_FLOWER);
             }).build());
 
 

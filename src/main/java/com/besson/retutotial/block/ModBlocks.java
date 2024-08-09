@@ -10,6 +10,7 @@ import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import net.minecraft.block.*;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -93,6 +94,11 @@ public class ModBlocks {
     public static final Block ICE_ETHER_WALL_HANGING_SIGN = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "ice_ether_wall_hanging_sign"),
             new TerraformWallHangingSignBlock(ICE_ETHER_HANGING_SIGN_TEXTURE, ICE_ETHER_HANGING_SING_GUI, AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
 
+    public static final Block SIMPLE_FLOWER = registerBlocks("simple_flower",
+            new FlowerBlock(StatusEffects.SPEED, 4, AbstractBlock.Settings.copy(Blocks.DANDELION)));
+    // 同样的，盆栽花没有方块物品
+    public static final Block POTTED_SIMPLE_FLOWER = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "potted_simple_flower"),
+            new FlowerPotBlock(SIMPLE_FLOWER, AbstractBlock.Settings.copy(Blocks.POTTED_DANDELION)));
 
     // 基于原版的方块物品注册方法
     public static void registerBlockItems(String name, Block block) {

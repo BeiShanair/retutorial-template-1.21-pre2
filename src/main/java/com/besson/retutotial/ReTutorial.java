@@ -15,6 +15,7 @@ import com.besson.retutotial.tags.ModItemTags;
 import com.besson.retutotial.util.ModCustomTrades;
 import com.besson.retutotial.util.ModLootTableModifiers;
 import com.besson.retutotial.villager.ModVillagers;
+import com.besson.retutotial.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
@@ -50,6 +51,8 @@ public class ReTutorial implements ModInitializer {
 		ModScreenHandlers.registerScreenHandlers();
 		ModRecipes.registerRecipes();
 		ModBoats.registerBoats();
+
+		ModWorldGeneration.generateModWorldGen();
 
 		// 原木和去皮原木、木头和去皮木头的注册（原版是硬编码，在AxeItem的STRIPPED_BLOCKS中）
 		StrippableBlockRegistry.register(ModBlocks.ICE_ETHER_LOG, ModBlocks.STRIPPED_ICE_ETHER_LOG);

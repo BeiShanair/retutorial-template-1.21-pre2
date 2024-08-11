@@ -5,5 +5,6 @@ public class ModWorldGeneration {
     public static void generateModWorldGen() {
         ModTreeGeneration.registerTrees();
         ModFlowerGeneration.generateFlowers();
+        ModOreGeneration.generateOres();
     }
 }

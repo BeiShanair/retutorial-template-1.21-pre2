@@ -40,7 +40,7 @@ dependencies {
 	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:16.0.744"
 
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1"
-	include "com.terraformersmc.terraform-wood:terraform-wood-v1:11.0.0-alpha.1"
+	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1"
 	
 }
 

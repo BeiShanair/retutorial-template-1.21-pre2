@@ -12,7 +12,10 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
+import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
+import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
+import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
 import java.util.List;
 
@@ -23,14 +26,22 @@ public class ModPlacedFeatures {
 
     // 注册树的放置的key
     public static final RegistryKey<PlacedFeature> ICE_ETHER_TREE_PLACED_KEY = of("ice_ether_tree_placed");
+    // 注册花的放置的key
+    public static final RegistryKey<PlacedFeature> SIMPLE_FLOWER_PLACED_KEY = of("simple_flower_placed");
 
     // boostrap方法，用于数据生成
     public static void boostrap(Registerable<PlacedFeature> featureRegisterable) {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> registryEntryLookup = featureRegisterable.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+        // PlacedFeatures.createCountExtraModifier是一个放置特征的生成器，参数分别是最小生成数量、额外生成概率、额外生成数量
         register(featureRegisterable, ICE_ETHER_TREE_PLACED_KEY, registryEntryLookup.getOrThrow(ModConfiguredFeatures.ICE_ETHER_TREE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         PlacedFeatures.createCountExtraModifier(2, 0.1f, 2),
                         ModBlocks.ICE_ETHER_TREE_SAPLING));
+        // RarityFilterPlacementModifier是一个放置特征的生成器，参数是代表多少个区块生成一次
+        // PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP按照地形生成
+        register(featureRegisterable, SIMPLE_FLOWER_PLACED_KEY, registryEntryLookup.getOrThrow(ModConfiguredFeatures.SIMPLE_FLOWER_KEY),
+                RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
+                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
     }
 
     // 注册方法

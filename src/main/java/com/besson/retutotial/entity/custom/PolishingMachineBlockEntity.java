@@ -152,11 +152,17 @@ public class PolishingMachineBlockEntity extends BlockEntity implements Extended
 //        ItemStack result = new ItemStack(ModItems.ICE_ETHER);
 //        this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
         Optional<RecipeEntry<PolishingMachineRecipe>> recipe = getCurrentRecipe();
+        if (recipe.isPresent()) {
+            PolishingMachineRecipe polishingMachineRecipe = recipe.get().value();
+            int num = polishingMachineRecipe.getNum();
+            if (getStack(INPUT_SLOT).getCount() < num) {
+                return;
+            }
+            this.setStack(OUTPUT_SLOT, new ItemStack(polishingMachineRecipe.getResult(null).getItem(),
+                    getStack(OUTPUT_SLOT).getCount() + polishingMachineRecipe.getResult(null).getCount()));
 
-        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
-                getStack(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
-
-        this.removeStack(INPUT_SLOT, 1);
+            this.removeStack(INPUT_SLOT, num);
+        }
     }
 
     private Optional<RecipeEntry<PolishingMachineRecipe>> getCurrentRecipe() {
@@ -186,7 +192,8 @@ public class PolishingMachineBlockEntity extends BlockEntity implements Extended
 //                canInsertItemIntoOutputSlot(result.getItem());
         Optional<RecipeEntry<PolishingMachineRecipe>> recipe = getCurrentRecipe();
 
-        return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().value().getResult(null)) &&
+        return recipe.isPresent() && getStack(INPUT_SLOT).getCount() >= recipe.get().value().getNum() &&
+                canInsertAmountIntoOutputSlot(recipe.get().value().getResult(null)) &&
                 canInsertItemIntoOutputSlot(recipe.get().value().getResult(null).getItem());
     }
 

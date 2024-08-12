@@ -5,6 +5,7 @@
       "item": "minecraft:coal"
     }
   ],
+  "num": 5,
   "output": {
     "id": "minecraft:diamond"
   }

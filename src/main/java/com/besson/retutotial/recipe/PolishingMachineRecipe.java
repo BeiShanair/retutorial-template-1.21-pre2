@@ -1,5 +1,6 @@
 package com.besson.retutotial.recipe;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -28,10 +29,13 @@ public class PolishingMachineRecipe implements Recipe<SingleStackRecipeInput> {
     // 一个List，用于存放输入
     private final List<Ingredient> recipeItems;
 
+    private final int num;
+
     // 构造方法，用于传入输入和输出
-    public PolishingMachineRecipe(List<Ingredient> recipeItems, ItemStack output) {
+    public PolishingMachineRecipe(List<Ingredient> recipeItems, ItemStack output, int num) {
         this.output = output;
         this.recipeItems = recipeItems;
+        this.num = num;
     }
 
     // 重写getIngredients方法，返回输入（这个也是为了方便REI的相关教程的）
@@ -40,6 +44,10 @@ public class PolishingMachineRecipe implements Recipe<SingleStackRecipeInput> {
         DefaultedList<Ingredient> list = DefaultedList.ofSize(this.recipeItems.size());
         list.addAll(recipeItems);
         return list;
+    }
+
+    public int getNum() {
+        return num;
     }
 
     // 重写matches方法，用于判断输入是否匹配
@@ -109,7 +117,9 @@ public class PolishingMachineRecipe implements Recipe<SingleStackRecipeInput> {
                     }
                     return DataResult.success(DefaultedList.copyOf(Ingredient.EMPTY, ingredients1));
                 }, DataResult::success).forGetter(r -> r.getIngredients()),
-                (ItemStack.VALIDATED_CODEC.fieldOf("output")).forGetter(r -> r.output)).apply(instance, PolishingMachineRecipe::new));
+                (ItemStack.VALIDATED_CODEC.fieldOf("output")).forGetter(r -> r.output),
+                        (Codec.INT.fieldOf("num")).forGetter(r -> r.num))
+                .apply(instance, PolishingMachineRecipe::new));
 
         // 用于网络传输的编解码器
         public static final PacketCodec<RegistryByteBuf, PolishingMachineRecipe> PACKET_CODEC = PacketCodec.ofStatic(
@@ -123,7 +133,8 @@ public class PolishingMachineRecipe implements Recipe<SingleStackRecipeInput> {
                 inputs.set(i, Ingredient.PACKET_CODEC.decode(buf));
             }
             ItemStack output = ItemStack.PACKET_CODEC.decode(buf);
-            return new PolishingMachineRecipe(inputs, output);
+            int num = buf.readInt();
+            return new PolishingMachineRecipe(inputs, output, num);
         }
 
         // 写入方法
@@ -134,6 +145,7 @@ public class PolishingMachineRecipe implements Recipe<SingleStackRecipeInput> {
                 Ingredient.PACKET_CODEC.encode(buf, ingredient);
             }
             ItemStack.PACKET_CODEC.encode(buf, recipe.getResult(null));
+            buf.writeInt(recipe.getNum());
 
         }
 

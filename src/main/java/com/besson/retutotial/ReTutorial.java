@@ -5,6 +5,8 @@ import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.block.ModFluids;
 import com.besson.retutotial.entity.ModBlockEntities;
 import com.besson.retutotial.entity.ModBoats;
+import com.besson.retutotial.entity.ModEntities;
+import com.besson.retutotial.entity.custom.TigerEntity;
 import com.besson.retutotial.item.ModItemGroups;
 import com.besson.retutotial.item.ModItems;
 import com.besson.retutotial.recipe.ModRecipes;
@@ -17,6 +19,7 @@ import com.besson.retutotial.util.ModLootTableModifiers;
 import com.besson.retutotial.villager.ModVillagers;
 import com.besson.retutotial.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import org.slf4j.Logger;
@@ -53,6 +56,9 @@ public class ReTutorial implements ModInitializer {
 		ModBoats.registerBoats();
 
 		ModWorldGeneration.generateModWorldGen();
+
+		// 注册生物实体及其属性
+		FabricDefaultAttributeRegistry.register(ModEntities.TIGER, TigerEntity.createTigerAttributes());
 
 		// 原木和去皮原木、木头和去皮木头的注册（原版是硬编码，在AxeItem的STRIPPED_BLOCKS中）
 		StrippableBlockRegistry.register(ModBlocks.ICE_ETHER_LOG, ModBlocks.STRIPPED_ICE_ETHER_LOG);

@@ -1,6 +1,8 @@
 package com.besson.retutotial.entity.custom;
 
 import com.besson.retutotial.entity.ModEntities;
+import net.minecraft.entity.AnimationState;
+import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -17,6 +19,28 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class TigerEntity extends AnimalEntity {
+    // 设置动画状态
+    public static final AnimationState idleAnimationState = new AnimationState();
+    public int idleAnimationTimeOut = 0;
+    public static final AnimationState attackAnimationState = new AnimationState();
+    public int attackAnimationTimeOut = 0;
+    private void setUpAnimationStates(){
+        if (idleAnimationTimeOut <= 0){
+            idleAnimationTimeOut = this.random.nextInt(40) + 80;
+            idleAnimationState.start(this.age);
+        } else {
+            --idleAnimationTimeOut;
+        }
+        if (this.isAttacking() && attackAnimationTimeOut <= 0){
+            attackAnimationTimeOut = 40;
+            attackAnimationState.start(this.age);
+        } else {
+            --attackAnimationTimeOut;
+        }
+        if (!this.isAttacking()){
+            attackAnimationState.stop();
+        }
+    }
     // 自定义生物实体，继承AnimalEntity
     public TigerEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
@@ -26,6 +50,9 @@ public class TigerEntity extends AnimalEntity {
     @Override
     public void tick() {
         super.tick();
+        if (this.getWorld().isClient()){
+            setUpAnimationStates();
+        }
     }
 
     // 重写initGoals方法
@@ -62,5 +89,11 @@ public class TigerEntity extends AnimalEntity {
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
         return ModEntities.TIGER.create(world);
+    }
+
+    @Override
+    protected void updateLimbs(float posDelta) {
+        float f = this.getPose() == EntityPose.STANDING ? Math.min(posDelta * 6.0f, 1.0f) : 0.0f;
+        this.limbAnimator.updateLimbs(f, 0.2f);
     }
 }

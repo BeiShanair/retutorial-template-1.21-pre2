@@ -1,10 +1,12 @@
 package com.besson.retutotial.entity.client;
 
+import com.besson.retutotial.entity.animation.TigerAnimation;
 import com.besson.retutotial.entity.custom.TigerEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.math.MathHelper;
 
 // Made with Blockbench 4.9.3
 // Exported for Minecraft version 1.17+ for Yarn
@@ -51,6 +53,20 @@ public class TigerModel<T extends TigerEntity> extends SinglePartEntityModel<T> 
 
 	@Override
 	public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+		// 重置所有骨骼的变换
+		this.getPart().traverse().forEach(ModelPart::resetTransform);
+		// 设置头部角度
+		this.setHeadAngles(headYaw, headPitch);
 
+		// 设置动画
+		this.animateMovement(TigerAnimation.WALK, limbAngle, limbDistance, 2f, 2.5f);
+		this.updateAnimation(TigerEntity.idleAnimationState, TigerAnimation.IDLE, animationProgress, 1f);
+	}
+	// 照搬骆驼
+	private void setHeadAngles(float headAngles,float headPitch){
+		headAngles = MathHelper.clamp(headAngles,-30.0F,30.0F);
+		headPitch = MathHelper.clamp(headPitch, -25.0F, 45.0F);
+		this.head.yaw = headAngles * 0.017453292F;
+		this.head.pitch = headPitch * 0.017453292F;
 	}
 }

@@ -1,6 +1,7 @@
 package com.besson.retutotial.datagen;
 
 import com.besson.retutotial.block.ModBlocks;
+import com.besson.retutotial.entity.ModEntities;
 import com.besson.retutotial.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -46,6 +47,7 @@ public class ModENLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.ICE_ETHER_WOLF_ARMOR, "Ice Ether Wolf Armor");
         translationBuilder.add(ModItems.ICE_ETHER_BOAT, "Ice Ether Boat");
         translationBuilder.add(ModItems.ICE_ETHER_CHEST_BOAT, "Ice Ether Chest Boat");
+        translationBuilder.add(ModItems.TIGER_SPAWN_EGG, "Tiger Spawn Egg");
 
         translationBuilder.add(ModBlocks.ICE_ETHER_BLOCK, "Ice Ether Block");
         translationBuilder.add(ModBlocks.ICE_ETHER_ORE, "Ice Ether Ore");
@@ -88,6 +90,7 @@ public class ModENLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.TEST_MUSIC_DISC, "Test Music Disc");
         translationBuilder.add("jukebox_song.retutorial.test", "高橋李依 - 小さな恋のうた");
         translationBuilder.add("container.retutorial.polishing_machine", "Polishing Machine");
+        translationBuilder.add(ModEntities.TIGER, "Tiger");
     }
 
 }

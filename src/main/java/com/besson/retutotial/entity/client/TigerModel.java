@@ -61,6 +61,7 @@ public class TigerModel<T extends TigerEntity> extends SinglePartEntityModel<T> 
 		// 设置动画
 		this.animateMovement(TigerAnimation.WALK, limbAngle, limbDistance, 2f, 2.5f);
 		this.updateAnimation(TigerEntity.idleAnimationState, TigerAnimation.IDLE, animationProgress, 1f);
+		this.updateAnimation(TigerEntity.attackAnimationState, TigerAnimation.ATTACK, animationProgress, 1f);
 	}
 	// 照搬骆驼
 	private void setHeadAngles(float headAngles,float headPitch){

@@ -1,12 +1,16 @@
 package com.besson.retutotial.entity.custom;
 
 import com.besson.retutotial.entity.ModEntities;
+import com.besson.retutotial.entity.ai.TigerAttackGoal;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
@@ -19,6 +23,8 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class TigerEntity extends AnimalEntity {
+    private static final TrackedData<Boolean> ATTACKING =
+            DataTracker.registerData(TigerEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     // 设置动画状态
     public static final AnimationState idleAnimationState = new AnimationState();
     public int idleAnimationTimeOut = 0;
@@ -67,6 +73,9 @@ public class TigerEntity extends AnimalEntity {
         this.goalSelector.add(4,new WanderAroundFarGoal(this,1.0D));
         this.goalSelector.add(5,new LookAtEntityGoal(this, PlayerEntity.class,3f));
         this.goalSelector.add(6,new LookAroundGoal(this));
+
+        this.goalSelector.add(1, new TigerAttackGoal(this,1.0D,true));
+        this.targetSelector.add(1,new RevengeGoal(this));
     }
     // 设置生物实体的属性
     // 见原版的EntityAttributes
@@ -95,5 +104,17 @@ public class TigerEntity extends AnimalEntity {
     protected void updateLimbs(float posDelta) {
         float f = this.getPose() == EntityPose.STANDING ? Math.min(posDelta * 6.0f, 1.0f) : 0.0f;
         this.limbAnimator.updateLimbs(f, 0.2f);
+    }
+
+    @Override
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(ATTACKING, false);
+    }
+    public void setAttacking(boolean attacking){
+        this.dataTracker.set(ATTACKING,attacking);
+    }
+    public boolean isAttacking(){
+        return this.dataTracker.get(ATTACKING);
     }
 }

@@ -4,6 +4,7 @@ import com.besson.retutotial.ReTutorial;
 import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.block.ModFluids;
 import com.besson.retutotial.entity.ModBoats;
+import com.besson.retutotial.entity.ModEntities;
 import com.besson.retutotial.item.custom.FireEther;
 import com.besson.retutotial.item.custom.Hat;
 import com.besson.retutotial.item.custom.ModArmorItem;
@@ -72,6 +73,8 @@ public class ModItems {
     public static final Item ICE_ETHER_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.ICE_ETHER_BOAT, ModBoats.ICE_ETHER_BOAT_KEY, false);
     public static final Item ICE_ETHER_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.ICE_ETHER_CHEST_BOAT, ModBoats.ICE_ETHER_BOAT_KEY, true);
     public static final Item SIMPLE_ITEM = registerItems("simple_item", new Item(new Item.Settings()));
+    public static final Item TIGER_SPAWN_EGG = registerItems("tiger_spawn_egg",
+            new SpawnEggItem(ModEntities.TIGER,0x252525, 0x4D4D4D, new Item.Settings()));
 
     // 注册告示牌物品
     public static final Item ICE_ETHER_SIGN = registerItems("ice_ether_sign",

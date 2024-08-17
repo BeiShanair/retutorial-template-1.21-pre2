@@ -4,6 +4,7 @@ import com.besson.retutotial.datagen.*;
 import com.besson.retutotial.sounds.ModJukeboxSongs;
 import com.besson.retutotial.world.ModConfiguredFeatures;
 import com.besson.retutotial.world.ModPlacedFeatures;
+import com.besson.retutotial.world.biome.ModBiomes;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
@@ -29,6 +30,6 @@ public class ReTutorialDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::boostrap);
 		registryBuilder.addRegistry(RegistryKeys.JUKEBOX_SONG, ModJukeboxSongs::bootstrap);
-
+        registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::boostrap);
 	}
 }

@@ -25,7 +25,10 @@
 		],
 		"rei_client": [
 			"com.besson.retutotial.compat.ModREIClientPlugins"
-		]
+		],
+		"terrablender": [
+			"com.besson.retutotial.world.biome.ModTerraBlenderAPI"
+			]
 	},
 	"mixins": [
 		"retutorial.mixins.json"

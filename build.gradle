@@ -21,6 +21,7 @@ repositories {
 		name = 'TerraformersMC'
 		url = 'https://maven.terraformersmc.com/'
 	}
+	maven { url = 'https://maven.minecraftforge.net/' }
 }
 
 fabricApi {
@@ -41,6 +42,7 @@ dependencies {
 
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1"
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1"
+	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.21-4.0.0.1'
 	
 }
 

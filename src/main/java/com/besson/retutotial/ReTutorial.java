@@ -9,6 +9,7 @@ import com.besson.retutotial.entity.ModEntities;
 import com.besson.retutotial.entity.custom.TigerEntity;
 import com.besson.retutotial.item.ModItemGroups;
 import com.besson.retutotial.item.ModItems;
+import com.besson.retutotial.particle.ModParticles;
 import com.besson.retutotial.recipe.ModRecipes;
 import com.besson.retutotial.screen.ModScreenHandlers;
 import com.besson.retutotial.sounds.ModSoundEvents;
@@ -56,6 +57,7 @@ public class ReTutorial implements ModInitializer {
 		ModBoats.registerBoats();
 
 		ModWorldGeneration.generateModWorldGen();
+		ModParticles.registerModParticles();
 
 		// 注册生物实体及其属性
 		FabricDefaultAttributeRegistry.register(ModEntities.TIGER, TigerEntity.createTigerAttributes());

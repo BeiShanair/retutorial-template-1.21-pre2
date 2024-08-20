@@ -23,6 +23,8 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -77,6 +79,12 @@ public class ReTutorial implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_PLANKS, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ICE_ETHER_LEAVES, 30, 60);
 
+		CustomPortalBuilder.beginPortal()
+				.frameBlock(ModBlocks.ICE_ETHER_BLOCK)
+				.lightWithItem(ModItems.ICE_ETHER)
+				.destDimID(Identifier.of(ReTutorial.MOD_ID, "test"))
+				.tintColor(0xc76a4f)
+				.registerPortal();
 		
 	}
 }

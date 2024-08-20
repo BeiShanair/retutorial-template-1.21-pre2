@@ -46,8 +46,14 @@ public abstract class CustomFluid extends FlowableFluid {
     }
 
     // 流体流动速度
+//    @Override
+//    protected int getFlowSpeed(WorldView world) {
+//        return 4;
+//    }
+
+    // 1.21+build.9更新之后的写法
     @Override
-    protected int getFlowSpeed(WorldView world) {
+    protected int getMaxFlowDistance(WorldView world) {
         return 4;
     }
 

@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.6-SNAPSHOT'
+	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -22,6 +22,7 @@ repositories {
 		url = 'https://maven.terraformersmc.com/'
 	}
 	maven { url = 'https://maven.minecraftforge.net/' }
+	maven {url = "https://maven.kyrptonaught.dev"}
 }
 
 fabricApi {
@@ -43,6 +44,9 @@ dependencies {
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1"
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1"
 	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.21-4.0.0.1'
+
+	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta66-1.21'
+	include 'net.kyrptonaught:customportalapi:0.0.1-beta66-1.21'
 	
 }
 

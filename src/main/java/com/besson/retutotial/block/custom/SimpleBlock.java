@@ -5,7 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
@@ -25,7 +25,8 @@ public class SimpleBlock extends Block {
     // 不想写编解码器的话，就直接继承Block，然后引入FACING属性，然后在构造方法中设置一下
 
     // 引入FACING属性
-    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+//    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = Properties.FACING;
 
     // 简单设置一下碰撞箱
     // 记得在Blockbench中安装Mod Utils插件，然后将所有的体块放在一个名为“VoxelShapes”的文件夹中，然后才能导出

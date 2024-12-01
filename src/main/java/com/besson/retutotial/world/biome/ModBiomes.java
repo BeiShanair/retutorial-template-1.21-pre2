@@ -1,8 +1,6 @@
 package com.besson.retutotial.world.biome;
 
 import com.besson.retutotial.ReTutorial;
-import com.besson.retutotial.entity.ModEntities;
-import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -33,7 +31,6 @@ public class ModBiomes {
     }
     private static Biome diamondBiome(Registerable<Biome> context) {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.TIGER, 2, 3, 5));
 
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);

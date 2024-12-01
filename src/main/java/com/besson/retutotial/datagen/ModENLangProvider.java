@@ -1,7 +1,6 @@
 package com.besson.retutotial.datagen;
 
 import com.besson.retutotial.block.ModBlocks;
-import com.besson.retutotial.entity.ModEntities;
 import com.besson.retutotial.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -44,10 +43,6 @@ public class ModENLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModItems.OIL_BUCKET, "Oil Bucket");
         translationBuilder.add(ModItems.ICE_ETHER_HORSE_ARMOR, "Ice Ether Horse Armor");
-        translationBuilder.add(ModItems.ICE_ETHER_WOLF_ARMOR, "Ice Ether Wolf Armor");
-        translationBuilder.add(ModItems.ICE_ETHER_BOAT, "Ice Ether Boat");
-        translationBuilder.add(ModItems.ICE_ETHER_CHEST_BOAT, "Ice Ether Chest Boat");
-        translationBuilder.add(ModItems.TIGER_SPAWN_EGG, "Tiger Spawn Egg");
 
         translationBuilder.add(ModBlocks.ICE_ETHER_BLOCK, "Ice Ether Block");
         translationBuilder.add(ModBlocks.ICE_ETHER_ORE, "Ice Ether Ore");
@@ -70,8 +65,6 @@ public class ModENLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.STRIPPED_ICE_ETHER_WOOD, "Stripped Ice Ether Wood");
         translationBuilder.add(ModBlocks.ICE_ETHER_PLANKS, "Ice Ether Planks");
         translationBuilder.add(ModBlocks.ICE_ETHER_LEAVES, "Ice Ether Leaves");
-        translationBuilder.add(ModBlocks.ICE_ETHER_SIGN, "Ice Ether Sign");
-        translationBuilder.add(ModBlocks.ICE_ETHER_HANGING_SIGN, "Ice Ether Hanging Sign");
         translationBuilder.add(ModBlocks.ICE_ETHER_TREE_SAPLING, "Ice Ether Tree Sapling");
         translationBuilder.add(ModBlocks.SIMPLE_FLOWER, "Simple Flower");
 
@@ -90,7 +83,6 @@ public class ModENLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.TEST_MUSIC_DISC, "Test Music Disc");
         translationBuilder.add("jukebox_song.retutorial.test", "高橋李依 - 小さな恋のうた");
         translationBuilder.add("container.retutorial.polishing_machine", "Polishing Machine");
-        translationBuilder.add(ModEntities.TIGER, "Tiger");
     }
 
 }

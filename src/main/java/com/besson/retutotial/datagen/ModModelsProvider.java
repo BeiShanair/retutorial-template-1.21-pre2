@@ -6,10 +6,20 @@ import com.besson.retutotial.block.custom.CornCropBlock;
 import com.besson.retutotial.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.EquippableComponent;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
-import net.minecraft.item.ArmorItem;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.Item;
+import net.minecraft.item.equipment.EquipmentModel;
+import net.minecraft.item.equipment.EquipmentModels;
+import net.minecraft.registry.Registries;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.Identifier;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ModModelsProvider extends FabricModelProvider {
     public ModModelsProvider(FabricDataOutput output) {
@@ -36,7 +46,6 @@ public class ModModelsProvider extends FabricModelProvider {
                                                 Models.CROSS, TextureMap::cross)))));
 
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.BOX);
-        blockStateModelGenerator.registerSimpleState(ModBlocks.POLISHING_MACHINE);
         // 生成简单的方块状态文件，不生成模型文件
 //        blockStateModelGenerator.registerSimpleState(ModBlocks.SIMPLE_BLOCK);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.SIMPLE_BLOCK);
@@ -69,22 +78,32 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.FIRE_ETHER_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.FIRE_ETHER_HOE, Models.HANDHELD);
 
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_HELMET);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_CHESTPLATE);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_LEGGINGS);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_BOOTS);
+//        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_HELMET);
+//        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_CHESTPLATE);
+//        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_LEGGINGS);
+//        itemModelGenerator.registerArmor((ArmorItem) ModItems.ICE_ETHER_BOOTS);
+
+        Map<Identifier, EquipmentModel> map = new HashMap();
+        EquipmentModels.accept(map::put);
+
+        for (Item item : Registries.ITEM) {
+            EquippableComponent equippableComponent = item.getComponents().get(DataComponentTypes.EQUIPPABLE);
+            if (equippableComponent != null && equippableComponent.slot().getType() == EquipmentSlot.Type.HUMANOID_ARMOR && equippableComponent.model().isPresent()) {
+                Identifier identifier = (Identifier)equippableComponent.model().get();
+                EquipmentModel equipmentModel = (EquipmentModel) map.get(identifier);
+                if (equipmentModel == null) {
+                    throw new IllegalStateException("Referenced equipment model does not exist: " + identifier);
+                }
+
+                itemModelGenerator.registerArmor(item, identifier, equipmentModel, equippableComponent.slot());
+            }
+        }
 
         itemModelGenerator.register(ModItems.TEST_MUSIC_DISC, Models.TEMPLATE_MUSIC_DISC);
 
         itemModelGenerator.register(ModItems.OIL_BUCKET, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.ICE_ETHER_HORSE_ARMOR, Models.GENERATED);
-        itemModelGenerator.registerWolfArmor(ModItems.ICE_ETHER_WOLF_ARMOR);
 
-        // 方块组不会生成悬挂标牌的模型，所以我们需要手动编写
-        itemModelGenerator.register(ModItems.ICE_ETHER_HANGING_SIGN, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.ICE_ETHER_BOAT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ICE_ETHER_CHEST_BOAT, Models.GENERATED);
     }
 }

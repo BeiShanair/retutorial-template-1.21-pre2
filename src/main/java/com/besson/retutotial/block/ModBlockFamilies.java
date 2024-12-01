@@ -29,7 +29,7 @@ public class ModBlockFamilies {
     // 但是方块组和悬挂类告示牌没有关联，只有普通的sign方法
     // 所以悬挂类告示牌需要单独注册
     public static final BlockFamily ICE_ETHER_WOOD = register(ModBlocks.ICE_ETHER_PLANKS)
-            .sign(ModBlocks.ICE_ETHER_SIGN, ModBlocks.ICE_ETHER_WALL_SIGN)
+//            .sign(ModBlocks.ICE_ETHER_SIGN, ModBlocks.ICE_ETHER_WALL_SIGN)
             .group("wooden")
             .unlockCriterionName("has_planks")
             .build();

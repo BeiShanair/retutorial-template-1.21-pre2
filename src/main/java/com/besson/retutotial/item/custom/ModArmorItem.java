@@ -7,15 +7,16 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.item.equipment.ArmorMaterial;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.world.World;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+@ Deprecated
 public class ModArmorItem extends ArmorItem {
     // Map存放ArmorMaterial和StatusEffectInstance的对应关系
     // 使用ImmutableMap.Builder创建一个不可变的Map
@@ -23,12 +24,12 @@ public class ModArmorItem extends ArmorItem {
     // StatusEffectInstance的构造方法参数分别为：效果类型，持续时间，效果等级，？，是否显示粒子，是否显示图标
     private static final Map<ArmorMaterial, List<StatusEffectInstance>> MAP =
             (new ImmutableMap.Builder<ArmorMaterial, List<StatusEffectInstance>>())
-                    .put(ModArmorMaterials.ICE_ETHER.value(),
+                    .put(ModArmorMaterials.ICE_ETHER,
                             Arrays.asList(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1000, 1, false, false, true),
                                     new StatusEffectInstance(StatusEffects.SPEED, 1000, 1, false, false, true)))
                     .build();
 
-    public ModArmorItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
+    public ModArmorItem(ArmorMaterial material, EquipmentType type, Settings settings) {
         super(material, type, settings);
     }
 
@@ -78,10 +79,11 @@ public class ModArmorItem extends ArmorItem {
         ArmorItem leggings = (ArmorItem) player.getInventory().getArmorStack(1).getItem();
         ArmorItem boots = (ArmorItem) player.getInventory().getArmorStack(0).getItem();
 
-        return helmet.getMaterial().value() == material
-                && chestplate.getMaterial().value() == material
-                && leggings.getMaterial().value() == material
-                && boots.getMaterial().value() == material;
+//        return helmet.getMaterial().value() == material
+//                && chestplate.getMaterial().value() == material
+//                && leggings.getMaterial().value() == material
+//                && boots.getMaterial().value() == material;
+        return false;
     }
 
     // 玩家是否穿戴了全套盔甲

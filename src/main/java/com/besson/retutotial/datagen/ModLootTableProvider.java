@@ -51,7 +51,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CORN_CROP, cropDrops(ModBlocks.CORN_CROP, ModItems.CORN, ModItems.CORN_SEEDS, builder2));
     }
     public LootTable.Builder likeCopperOreDrops(Block drop, Item item) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
+        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getOrThrow(RegistryKeys.ENCHANTMENT);
         return this.dropsWithSilkTouch(drop, (LootPoolEntry.Builder)this.applyExplosionDecay(drop,
                 ((LeafEntry.Builder) ItemEntry.builder(item)
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 5.0f))))

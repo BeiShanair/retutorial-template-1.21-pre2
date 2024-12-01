@@ -76,9 +76,6 @@ public class ModItemGroups {
                 entries.add(ModItems.OIL_BUCKET);
 
                 entries.add(ModItems.ICE_ETHER_HORSE_ARMOR);
-                entries.add(ModItems.ICE_ETHER_WOLF_ARMOR);
-
-                entries.add(ModBlocks.POLISHING_MACHINE);
 
                 entries.add(ModBlocks.SIMPLE_BLOCK);
                 entries.add(ModBlocks.SIMPLE_FENCE);
@@ -90,14 +87,8 @@ public class ModItemGroups {
                 entries.add(ModBlocks.ICE_ETHER_PLANKS);
                 entries.add(ModBlocks.ICE_ETHER_LEAVES);
 
-                entries.add(ModItems.ICE_ETHER_SIGN);
-                entries.add(ModItems.ICE_ETHER_HANGING_SIGN);
-
-                entries.add(ModItems.ICE_ETHER_BOAT);
-                entries.add(ModItems.ICE_ETHER_CHEST_BOAT);
                 entries.add(ModBlocks.ICE_ETHER_TREE_SAPLING);
                 entries.add(ModBlocks.SIMPLE_FLOWER);
-                entries.add(ModItems.TIGER_SPAWN_EGG);
             }).build());
 
 

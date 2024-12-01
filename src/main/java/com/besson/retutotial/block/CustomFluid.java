@@ -6,10 +6,10 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
@@ -26,7 +26,7 @@ public abstract class CustomFluid extends FlowableFluid {
     // 是否是无限流体
     // 参考水是无限流体，岩浆不是无限流体
     @Override
-    protected boolean isInfinite(World world) {
+    protected boolean isInfinite(ServerWorld world) {
         return false;
     }
 

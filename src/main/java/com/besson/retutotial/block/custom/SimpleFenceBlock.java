@@ -4,7 +4,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.BlockMirror;
@@ -12,13 +11,16 @@ import net.minecraft.util.BlockRotation;
 import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.world.WorldAccess;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.WorldView;
+import net.minecraft.world.tick.ScheduledTickView;
 import org.jetbrains.annotations.Nullable;
 
 public class SimpleFenceBlock extends Block {
     // 这里我们来实现栅栏类的方块（当然，这里只有左右两侧的栅栏，如果你想要四面都有栅栏，那么你需要查阅原版栅栏相关的代码）
     // 然后此处的碰撞箱也省略了
-    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+//    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = Properties.FACING;
 
     // 设置枚举的方块状态
     public static final EnumProperty<Type> TYPE = EnumProperty.of("type", Type.class);
@@ -51,13 +53,19 @@ public class SimpleFenceBlock extends Block {
     }
 
     // 重写getStateForNeighborUpdate方法，用于更新方块状态
+//    @Override
+//    protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+//        return getRelatedBlockState(state, world, pos, state.get(FACING));
+//    }
+
+
     @Override
-    protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
         return getRelatedBlockState(state, world, pos, state.get(FACING));
     }
 
     // 编写一个方法来获取相关方块的状态
-    private BlockState getRelatedBlockState(BlockState state, WorldAccess world, BlockPos pos, Direction direction) {
+    private BlockState getRelatedBlockState(BlockState state, WorldView world, BlockPos pos, Direction direction) {
         // 判断左右两侧是否有相关方块
         boolean left = isRelatedBlock(world, pos, direction.rotateYCounterclockwise(), direction) ||
                 isRelatedBlock(world, pos, direction.rotateYCounterclockwise(), direction.rotateYCounterclockwise());
@@ -76,7 +84,7 @@ public class SimpleFenceBlock extends Block {
     }
 
     // 编写一个方法来判断是否有相关方块
-    private boolean isRelatedBlock(WorldAccess world, BlockPos pos, Direction direction, Direction direction1) {
+    private boolean isRelatedBlock(WorldView world, BlockPos pos, Direction direction, Direction direction1) {
         BlockState state = world.getBlockState(pos.offset(direction));
         if (state.getBlock() == this) {
             Direction blockDirection = state.get(FACING);

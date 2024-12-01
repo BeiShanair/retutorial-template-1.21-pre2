@@ -1,13 +1,9 @@
 package com.besson.retutotial.item.custom;
 
-import com.besson.retutotial.item.ModItems;
 import com.besson.retutotial.sounds.ModSoundEvents;
 import com.besson.retutotial.tags.ModBlockTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentLevelEntry;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -15,13 +11,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.Items;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -54,7 +46,7 @@ public class Prospector extends Item {
 
                             if (isRightBlock(blockState)) {
                                 // 输出找到的矿石名称，当然为了游戏的平衡性，就不输出坐标了
-                                player.sendMessage(Text.of("Found " + blockName + "!"));
+                                player.sendMessage(Text.of("Found " + blockName + "!"), false);
                                 world.playSound(null, blockPos, ModSoundEvents.PROSPECTOR_FOUND_ORE, SoundCategory.BLOCKS, 1.0F, 1.0F);
                                 foundBlock = true;
                                 break;
@@ -64,7 +56,7 @@ public class Prospector extends Item {
                 }
                 // 当然，如果没有找到矿石，就输出“没有找到矿石”
                 if (!foundBlock) {
-                    player.sendMessage(Text.of("No Ore Found!"));
+                    player.sendMessage(Text.of("No Ore Found!"), false);
                 }
             } else {
                 // 这里的方法和上面的方法类似，只是没有扩大搜索范围
@@ -74,26 +66,26 @@ public class Prospector extends Item {
                     String blockName = blockState.getBlock().getName().getString();
 
                     if (isRightBlock(blockState)) {
-                        player.sendMessage(Text.of("Found " + blockName + "!"));
+                        player.sendMessage(Text.of("Found " + blockName + "!"), false);
                         world.playSound(null, blockPos, ModSoundEvents.PROSPECTOR_FOUND_ORE, SoundCategory.BLOCKS, 1.0F, 1.0F);
                         foundBlock = true;
                         break;
                     }
                 }
                 if (!foundBlock) {
-                    player.sendMessage(Text.of("No Ore Found!"));
+                    player.sendMessage(Text.of("No Ore Found!"), false);
                 }
             }
         }
         // 每次使用后，耐久度减1
         context.getStack().damage(1, player, LivingEntity.getSlotForHand(context.getHand()));
 
-        player.sendMessage(Text.of("Durability: " + context.getStack().getDamage() + "/127"));
+        player.sendMessage(Text.of("Durability: " + context.getStack().getDamage() + "/127"), false);
 
         // 当耐久度大于50时，提示玩家，更换物品
         // 并且将耐久度传递给新的物品
         if (context.getStack().getDamage() > 50) {
-            player.sendMessage(Text.of("Your Prospector is getting old!"));
+            player.sendMessage(Text.of("Your Prospector is getting old!"), false);
             ItemStack newStack = new ItemStack(Items.STONE_AXE);
             newStack.setDamage(context.getStack().getDamage());
 
@@ -105,15 +97,6 @@ public class Prospector extends Item {
         return ActionResult.SUCCESS;
     }
 
-//    // 我们自定义的方法，用于判断方块是否是矿石
-//    private boolean isRightBlock(BlockState blockState) {
-//        // 这玩意讲了Tags之后就会简单很多
-//        if (blockState.isOf(Blocks.DIAMOND_ORE) || blockState.isOf(Blocks.IRON_ORE) || blockState.isOf(Blocks.COAL_ORE)){
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
 
     // 用Tag来改写方法
     private boolean isRightBlock(BlockState blockState) {
@@ -125,22 +108,6 @@ public class Prospector extends Item {
     }
 
     @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return true;
-    }
-
-    // 暂定附魔方法
-    @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        DynamicRegistryManager registryManager = world.getRegistryManager();
-        RegistryEntry<Enchantment> enchantment =
-                registryManager.get(RegistryKeys.ENCHANTMENT).getEntry(Identifier.ofVanilla("sharpness")).get();
-        stack.addEnchantment(enchantment, 5);
-        this.stack = stack;
-        super.inventoryTick(stack, world, entity, slot, selected);
-    }
-
-    @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         super.appendTooltip(stack, context, tooltip, type);
         if (Screen.hasShiftDown()){
@@ -148,17 +115,5 @@ public class Prospector extends Item {
         }else {
             tooltip.add(Text.translatable("item.retutorial.prospector.tooltip"));
         }
-    }
-    public static ItemStack enchant(EnchantmentLevelEntry info){
-        ItemStack stack = new ItemStack(ModItems.PROSPECTOR);
-        stack.addEnchantment(info.enchantment,info.level);
-        return stack;
-    }
-
-    @Override
-    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        user.sendMessage(Text.of("You have used the Prospector!"));
-
-        return super.finishUsing(stack, world, user);
     }
 }

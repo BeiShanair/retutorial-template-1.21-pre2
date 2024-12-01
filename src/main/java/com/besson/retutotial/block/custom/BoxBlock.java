@@ -10,7 +10,7 @@ import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -23,7 +23,8 @@ import java.util.function.Supplier;
 public class BoxBlock extends AbstractChestBlock<BoxBlockEntity> {
     // 仿写原版的箱子方块，实现箱子的功能
     // 写一个Facing属性（具体的使用方法在后续的教程中再讲，这里其实没什么用）
-    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
+//    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
+    public static final EnumProperty<Direction> FACING = HorizontalFacingBlock.FACING;
     // CODEC是一个MapCodec，用于序列化和反序列化方块
     public static final MapCodec<BoxBlock> CODEC = BoxBlock.createCodec(settings -> new BoxBlock((AbstractBlock.Settings) settings, () -> ModBlockEntities.BOX));
     public BoxBlock(Settings settings, Supplier<BlockEntityType<? extends BoxBlockEntity>> blockEntityTypeSupplier) {

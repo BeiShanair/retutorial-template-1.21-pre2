@@ -5,10 +5,6 @@ import com.besson.retutotial.block.custom.*;
 import com.besson.retutotial.entity.ModBlockEntities;
 import com.besson.retutotial.sounds.ModSoundEvents;
 import com.besson.retutotial.world.tree.ModTreeGenerator;
-import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
-import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
-import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
-import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
@@ -55,8 +51,8 @@ public class ModBlocks {
             new FluidBlock(ModFluids.OIL, AbstractBlock.Settings.copy(Blocks.WATER)));
     public static final Block BOX = registerBlocks("box",
             new BoxBlock(AbstractBlock.Settings.copy(Blocks.CHEST), () -> ModBlockEntities.BOX));
-    public static final Block POLISHING_MACHINE = registerBlocks("polishing_machine",
-            new PolishingMachine(AbstractBlock.Settings.copy(Blocks.STONE)));
+//    public static final Block POLISHING_MACHINE = registerBlocks("polishing_machine",
+//            new PolishingMachine(AbstractBlock.Settings.copy(Blocks.STONE)));
 
     public static final Block SIMPLE_BLOCK = registerBlocks("simple_block",
             new SimpleBlock(AbstractBlock.Settings.copy(Blocks.STONE)));
@@ -77,22 +73,6 @@ public class ModBlocks {
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque()));
     public static final Block ICE_ETHER_TREE_SAPLING = registerBlocks("ice_ether_tree_sapling",
             new SaplingBlock(ModTreeGenerator.ICE_ETHER_TREE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
-
-    // 我们借助Terraform API来实现告示牌的注册
-    // 首先需要一些Identifier，这些是材质文件的路径
-    public static final Identifier ICE_ETHER_SIGN_TEXTURE = Identifier.of(ReTutorial.MOD_ID, "entity/signs/ice_ether");
-    public static final Identifier ICE_ETHER_HANGING_SIGN_TEXTURE = Identifier.of(ReTutorial.MOD_ID, "entity/signs/hanging/ice_ether");
-    public static final Identifier ICE_ETHER_HANGING_SING_GUI = Identifier.of(ReTutorial.MOD_ID, "textures/gui/hanging_signs/ice_ether");
-
-    // 告示牌的物品是两个为一组，所以说这里要分开来注册
-    public static final Block ICE_ETHER_SIGN = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "ice_ether_sign"),
-            new TerraformSignBlock(ICE_ETHER_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
-    public static final Block ICE_ETHER_WALL_SIGN = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "ice_ether_wall_sign"),
-            new TerraformWallSignBlock(ICE_ETHER_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
-    public static final Block ICE_ETHER_HANGING_SIGN = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "ice_ether_hanging_sign"),
-            new TerraformHangingSignBlock(ICE_ETHER_HANGING_SIGN_TEXTURE, ICE_ETHER_HANGING_SING_GUI, AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
-    public static final Block ICE_ETHER_WALL_HANGING_SIGN = Registry.register(Registries.BLOCK, Identifier.of(ReTutorial.MOD_ID, "ice_ether_wall_hanging_sign"),
-            new TerraformWallHangingSignBlock(ICE_ETHER_HANGING_SIGN_TEXTURE, ICE_ETHER_HANGING_SING_GUI, AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
 
     public static final Block SIMPLE_FLOWER = registerBlocks("simple_flower",
             new FlowerBlock(StatusEffects.SPEED, 4, AbstractBlock.Settings.copy(Blocks.DANDELION)));

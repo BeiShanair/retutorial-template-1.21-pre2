@@ -3,24 +3,15 @@
   "package": "com.besson.retutotial.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "AbstractFurnaceBlockEntityMixin",
-    "CraftingResultSlotMixin",
-    "EndermanEntityInvoker",
-    "GrassColorsAccessor",
-    "ItemsInvoker",
     "RepairItemRecipeMixin",
     "ReTutorialMixin",
-    "SmithingScreenHandlerMixin",
-    "WolfEntityMixin"
+    "SmithingScreenHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "client": [
     "ItemRenderAccessor",
-    "ItemRenderMixin",
-    "MinecraftClientAccessor",
-    "ModelLoaderMixin",
     "RenderLayersMixin"
   ]
 }

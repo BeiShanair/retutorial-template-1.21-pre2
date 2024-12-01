@@ -2,6 +2,8 @@ package com.besson.retutotial.entity.custom;
 
 import com.besson.retutotial.entity.ModEntities;
 import com.besson.retutotial.entity.ai.TigerAttackGoal;
+import com.besson.retutotial.screen.TestScreen;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
@@ -19,6 +21,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -116,5 +121,13 @@ public class TigerEntity extends AnimalEntity {
     }
     public boolean isAttacking(){
         return this.dataTracker.get(ATTACKING);
+    }
+
+    @Override
+    public ActionResult interactMob(PlayerEntity player, Hand hand) {
+        MinecraftClient.getInstance().execute(() ->
+                MinecraftClient.getInstance().setScreen(new TestScreen(Text.empty(), this)));
+
+        return ActionResult.SUCCESS;
     }
 }

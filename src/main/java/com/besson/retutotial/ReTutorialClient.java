@@ -6,6 +6,7 @@ import com.besson.retutotial.entity.ModEntities;
 import com.besson.retutotial.entity.client.ModModelLayers;
 import com.besson.retutotial.entity.client.TigerModel;
 import com.besson.retutotial.entity.client.TigerRenderer;
+import com.besson.retutotial.events.TigerInteractEventHandler;
 import com.besson.retutotial.particle.ModParticles;
 import com.besson.retutotial.screen.ModScreenHandlers;
 import com.besson.retutotial.screen.PolishingMachineScreen;
@@ -45,5 +46,7 @@ public class ReTutorialClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.TIGER, TigerRenderer::new);
 
         ParticleFactoryRegistry.getInstance().register(ModParticles.GREEN_FLAME, FlameParticle.Factory::new);
+
+        TigerInteractEventHandler.register();
     }
 }

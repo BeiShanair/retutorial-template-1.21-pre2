@@ -123,11 +123,11 @@ public class TigerEntity extends AnimalEntity {
         return this.dataTracker.get(ATTACKING);
     }
 
-    @Override
-    public ActionResult interactMob(PlayerEntity player, Hand hand) {
-        MinecraftClient.getInstance().execute(() ->
-                MinecraftClient.getInstance().setScreen(new TestScreen(Text.empty(), this)));
-
-        return ActionResult.SUCCESS;
-    }
+//    @Override
+//    public ActionResult interactMob(PlayerEntity player, Hand hand) {
+//        MinecraftClient.getInstance().execute(() ->
+//                MinecraftClient.getInstance().setScreen(new TestScreen(Text.empty(), this)));
+//
+//        return ActionResult.SUCCESS;
+//    }
 }

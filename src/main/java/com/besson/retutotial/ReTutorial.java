@@ -3,6 +3,8 @@ package com.besson.retutotial;
 import com.besson.retutotial.block.ModBlockFamilies;
 import com.besson.retutotial.block.ModBlocks;
 import com.besson.retutotial.block.ModFluids;
+import com.besson.retutotial.enchanment.ModEnchantmentEffects;
+import com.besson.retutotial.enchanment.ModEnchantments;
 import com.besson.retutotial.entity.ModBlockEntities;
 import com.besson.retutotial.entity.ModBoats;
 import com.besson.retutotial.entity.ModEntities;
@@ -61,6 +63,7 @@ public class ReTutorial implements ModInitializer {
 
 		ModWorldGeneration.generateModWorldGen();
 		ModParticles.registerModParticles();
+		ModEnchantmentEffects.registerModEnchantments();
 
 		ModPaintingVariants.init();
 		// 注册生物实体及其属性

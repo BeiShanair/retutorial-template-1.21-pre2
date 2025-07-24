@@ -1,6 +1,7 @@
 package com.besson.retutotial;
 
 import com.besson.retutotial.datagen.*;
+import com.besson.retutotial.enchanment.ModEnchantments;
 import com.besson.retutotial.painting.ModPaintingVariants;
 import com.besson.retutotial.sounds.ModJukeboxSongs;
 import com.besson.retutotial.world.ModConfiguredFeatures;
@@ -36,5 +37,6 @@ public class ReTutorialDataGenerator implements DataGeneratorEntrypoint {
         registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::boostrap);
 		registryBuilder.addRegistry(RegistryKeys.DIMENSION_TYPE, ModDimensions::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PAINTING_VARIANT, ModPaintingVariants::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.ENCHANTMENT, ModEnchantments::bootstrap);
 	}
 }

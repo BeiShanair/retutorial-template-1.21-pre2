@@ -152,7 +152,7 @@ public class PolishingMachineBlockEntity extends BlockEntity implements Extended
 //        ItemStack result = new ItemStack(ModItems.ICE_ETHER);
 //        this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
         Optional<RecipeEntry<PolishingMachineRecipe>> recipe = getCurrentRecipe();
-        if (recipe.isPresent()) {
+        if (recipe.isPresent() && this.getWorld().isRaining()) {
             PolishingMachineRecipe polishingMachineRecipe = recipe.get().value();
             int num = polishingMachineRecipe.getNum();
             if (getStack(INPUT_SLOT).getCount() < num) {

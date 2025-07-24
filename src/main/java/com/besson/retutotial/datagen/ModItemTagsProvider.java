@@ -46,5 +46,13 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ModItemTags.ICE_ETHER_ARMOR)
                 .add(ModItems.ICE_ETHER_HELMET, ModItems.ICE_ETHER_CHESTPLATE, ModItems.ICE_ETHER_LEGGINGS, ModItems.ICE_ETHER_BOOTS);
+
+        getOrCreateTagBuilder(ItemTags.SWORD_ENCHANTABLE)
+                .add(ModItems.FIRE_ETHER_SWORD);
+
+        getOrCreateTagBuilder(ItemTags.MINING_LOOT_ENCHANTABLE)
+                .add(ModItems.FIRE_ETHER_AXE)
+                .add(ModItems.FIRE_ETHER_PICKAXE)
+                .add(ModItems.FIRE_ETHER_SHOVEL);
     }
 }

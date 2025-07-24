@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "retutorial:ice_ether"
-    },
-    {
-      "item": "minecraft:stone"
-    }
+    "retutorial:ice_ether",
+    "minecraft:stone"
   ],
   "result": {
     "count": 1,

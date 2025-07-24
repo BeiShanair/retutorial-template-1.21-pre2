@@ -1,7 +1,11 @@
 package com.besson.retutotial.datagen;
 
+import com.besson.retutotial.block.ModBlocks;
+import com.besson.retutotial.item.ModItemGroups;
+import com.besson.retutotial.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.nio.file.Path;
@@ -14,13 +18,13 @@ public class ModENLangProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
-        translationBuilder.add("item.retutorial.ice_ether", "Ice Ether");
-        translationBuilder.add("item.retutorial.raw_ice_ether", "Raw Ice Ether");
+        translationBuilder.add(ModItems.ICE_ETHER, "Ice Ether");
+        translationBuilder.add(ModItems.RAW_ICE_ETHER, "Raw Ice Ether");
 
-        translationBuilder.add("block.retutorial.ice_ether_block", "Ice Ether Block");
-        translationBuilder.add("block.retutorial.ice_ether_ore", "Ice Ether Ore");
-        translationBuilder.add("block.retutorial.raw_ice_ether_block", "Raw Ice Ether Block");
+        translationBuilder.add(ModBlocks.ICE_ETHER_BLOCK, "Ice Ether Block");
+        translationBuilder.add(ModBlocks.ICE_ETHER_ORE, "Ice Ether Ore");
+        translationBuilder.add(ModBlocks.RAW_ICE_ETHER_BLOCK, "Raw Ice Ether Block");
 
-        translationBuilder.add("itemGroup.retutorial", "Retutorial");
+        translationBuilder.add("itemGroup.retutorial_group", "Retutorial");
     }
 }

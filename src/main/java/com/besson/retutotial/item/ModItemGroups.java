@@ -35,9 +35,9 @@ public class ModItemGroups {
                 entries.add(ModItems.ICE_ETHER);
                 entries.add(ModItems.RAW_ICE_ETHER);
 
-                entries.add(ModBlocks.ICE_ETHER_ORE);
-                entries.add(ModBlocks.ICE_ETHER_BLOCK);
-                entries.add(ModBlocks.RAW_ICE_ETHER_BLOCK);
+                entries.add(ModBlocks.ICE_ETHER_ORE.asItem());
+                entries.add(ModBlocks.ICE_ETHER_BLOCK.asItem());
+                entries.add(ModBlocks.RAW_ICE_ETHER_BLOCK.asItem());
             }).build());
     public static void registerModItemGroups() {
         ReTutorial.LOGGER.info("Registering Item Groups");

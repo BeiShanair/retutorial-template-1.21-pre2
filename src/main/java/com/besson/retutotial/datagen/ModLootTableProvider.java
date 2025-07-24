@@ -30,11 +30,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.ICE_ETHER_BLOCK);
         addDrop(ModBlocks.RAW_ICE_ETHER_BLOCK);
-//        addDrop(ModBlocks.ICE_ETHER_ORE, oreDrops(ModBlocks.ICE_ETHER_ORE, ModItems.ICE_ETHER));
         addDrop(ModBlocks.ICE_ETHER_ORE, likeCopperOreDrops(ModBlocks.ICE_ETHER_ORE, ModItems.RAW_ICE_ETHER));
     }
     public LootTable.Builder likeCopperOreDrops(Block drop, Item item) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
+        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getOrThrow(RegistryKeys.ENCHANTMENT);
         return this.dropsWithSilkTouch(drop, (LootPoolEntry.Builder)this.applyExplosionDecay(drop,
                 ((LeafEntry.Builder) ItemEntry.builder(item)
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 5.0f))))
